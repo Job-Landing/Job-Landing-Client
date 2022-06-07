@@ -20,25 +20,39 @@ information related to them.
 ## Langing Page
 
 This page is a brief introduction of our app, displaying user comments and a action page for register
-![home-page](./public/images/page-landing.png)
+<div align="center">
+    <img src="./public/images/page-landing.png" alt="home-page" width=60%>
+</div>
 
 ## Demo Page
 
 This page allows anonymous users to try on the app without login. However, all the data won't be saved unless the user
 login.
-![demo-page](./public/images/page-demo.png)
+
+<div align="center">
+    <img src="./public/images/page-demo.png" alt="demo-page" width=60%>
+</div>
 
 ## All Job Tracking Page
 
 This page will allow login user to search their saved job by filter
-![main-page](./public/images/page-all-jobs.png)
+
+<div align="center">
+    <img src="./public/images/page-all-jobs.png" alt="all-job-page" width=60%>
+</div>
 
 ## Job Add Page
 
 This page will allow login user add position they just applied and keep tracking in the future.
-![add-page](./public/images/page-add-job.png)
+
+<div align="center">
+    <img src="./public/images/page-add-job.png" alt="add-job-page" width=60%>
+</div>
 
 ## Profile Page
 
 This is user profile information.
-![profile-page](./public/images/page-profile.png)
+
+<div align="center">
+    <img src="./public/images/page-profile.png" alt="profile-page" width=60%>
+</div>

@@ -1,19 +1,21 @@
 import React from 'react';
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
-import { Home, Error } from './pages';
+// import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import {
+  BrowserRouter,
+  Routes,
+  Route,
+} from "react-router-dom";
+import { Home, List, Error } from './pages';
 
 function App() {
   return (
-    <Router>
-      <Switch>
-        <Route exact path="/">
-          <Home />
-        </Route>
-        <Route path='*'>
-          <Error />
-        </Route>
-      </Switch>
-    </Router>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Home />} ></Route>
+        <Route path="/list" element={<List />} ></Route>
+        <Route path="*" element={<Error />} ></Route>
+      </Routes>
+    </BrowserRouter>
   );
 }
 

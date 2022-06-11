@@ -2,6 +2,11 @@
 
 *Help job seekers land their dream job*
 
+Teams: 
+- Zanyuan Yang
+- Siheng Wei
+- Maple Feng Zhu
+
 ## App Introduction
 
 Getting a job is no easy task, especially with tight competition and increased challenges during the application and

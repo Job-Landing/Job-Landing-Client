@@ -1,14 +1,16 @@
 import React, { useState } from 'react'
 import logo from '../images/logo.png'
 import styled from 'styled-components';
+import VisibilityIcon from '@mui/icons-material/Visibility';
+import VisibilityOffIcon from '@mui/icons-material/VisibilityOff';
+import { Link } from "react-router-dom";
 
 const Signup = (() => {
 
   const [password, setPassword] = useState('');
   const [showPassword, setShowPassword] = useState(false);
 
-  const handleChange = (e) => {
-    console.log(e.target.value)
+  const handleChangePassword = (e) => {
     setPassword(e.target.value)
   }
 
@@ -28,21 +30,19 @@ const Signup = (() => {
         <div className="form_wrapper_1">
           <h3 className="form_title">Sign Up</h3>
         </div>
-
         <form>
-          <input type="email" name="email" placeholder='E-mail' />
-          <input type="text" name="name" placeholder='Username' />
-          <input type="password" name="password" placeholder='Password' />
+          <input autoComplete="off" type="email" name="email" placeholder='E-mail' />
+          <input autoComplete="off" type="text" name="name" placeholder='Username' />
+          <input autoComplete="off" type={ !showPassword ? "password" : "text" } name="password" placeholder='Password' onChange={handleChangePassword} />
+          {!showPassword ? <VisibilityOffIcon onClick={handleClickShowPassword} className='seen' /> : <VisibilityIcon onClick={handleClickShowPassword} className='seen' />}
+
           <p>Forgot your password?</p>
           <button className='signup'>Sign Up</button>
         </form>
         <div className='login'>
-          <p>Already has an account? Login</p>
+          <Link className='link'to="/login"><p>Already has an account? Login</p></Link>
         </div>
       </div>
-
-
-
     </Wrapper>
 
   )
@@ -94,13 +94,15 @@ const Wrapper = styled.main`
       border:none;
       margin-top: 15px;
       box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+      transition: 0.5s;
     }
 
     p{
       color:black;
       font-size: 12px;
       font-weight: 500;
-      margin-top: 20px;
+      margin-top: 15px;
+      cursor: pointer;
     }
 
     .signup{
@@ -129,6 +131,20 @@ const Wrapper = styled.main`
       border-top: 3px solid white;
       color: black;
       text-align: center;
+    }
+    .seen{
+      color: #1B2430;
+      position: relative;
+      left: 160px;
+      bottom: 34px;
+      transition: 0.2s;
+      /* text-align: left; */
+    }
+    .link{
+      text-decoration: none;
+    }
+    .seen:hover{
+      color: #626262;
     }
 `
 

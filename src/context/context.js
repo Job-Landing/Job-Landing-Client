@@ -1,13 +1,13 @@
 import React, { useState } from 'react';
 
-const ExampleContext = React.createContext();
+const JobLandingContext = React.createContext();
 
-const ExampleProvider = ({ children }) => {
+const JobLandingProvider = ({ children }) => {
     const [example, setExample] = useState("example");
 
-    return <ExampleContext.Provider value={{example, setExample}}>
+    return <JobLandingContext.Provider value={{example, setExample}}>
         {children}
-    </ExampleContext.Provider>;
+    </JobLandingContext.Provider>;
 }
 
-export { ExampleProvider, ExampleContext };
+export { JobLandingProvider, JobLandingContext };

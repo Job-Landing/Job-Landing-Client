@@ -1,67 +1,58 @@
-# React Starter Quick Setup
+# Job Landing Board
 
-## Notes
-Help user to quick start the React project
+*Help job seekers land their dream job*
 
-## UI library
-[Material UI](https://mui.com/)
+## App Introduction
 
-## Installation
+Getting a job is no easy task, especially with tight competition and increased challenges during the application and
+recruitment process.
 
-- git clone the project
-- navigate to the folder
-- run `npm start && npm install`(you can also use `pnpm start && pnpm install` if you have `pnpm` install)
+- It takes **21 to 80 job applications** to get one job offer, on average.
+- 61.7% of job seekers get at least one interview by sending between **1-10 job applications**.
+- 51% of job seekers receive a job offer after having **3 job interviews**.
 
-## [pnpm](https://pnpm.io/installation)
-```
-pnpm is an alternative package manager for Node.js.
-It is a drop-in replacement for npm, but faster and more efficient.
-```
-```
-pnpm install -g pnpm
-brew install pnpm
-```
+The jobs apply for are scattered all over the place (Indeed, LinkedIn, email, personal meetings, etc),
+making it hard to remember where we've applied and where we stand with each opportunity.
 
+This is a tool to help user track and organize job search that offers one place to keep all of those jobs and all the
+information related to them.
 
-## Styled Components
+## Langing Page
 
-[Styled-Components - Main Docs](https://styled-components.com/)
+This page is a brief introduction of our app, displaying user comments and a action page for register
+<div align="center">
+    <img src="./public/images/page-landing.png" alt="home-page" width=60%>
+</div>
 
-```jsx
-import styled from "styled-components";
+## Demo Page
 
-const ReactComponent = () => {
- // logic here
- return <Wrapper>
- {some content}
- </Wrapper>
-}
+This page allows anonymous users to try on the app without login. However, all the data won't be saved unless the user
+login.
 
+<div align="center">
+    <img src="./public/images/page-demo.png" alt="demo-page" width=60%>
+</div>
 
-const Wrapper = styled.htmlElement`
-write your styles here
-`
-export default ReactComponent
-```
+## All Job Tracking Page
 
-## React Icons
+This page will allow login user to search their saved job by filter
 
-[React Icons - Main Docs](https://react-icons.github.io/react-icons/)
+<div align="center">
+    <img src="./public/images/page-all-jobs.png" alt="all-job-page" width=60%>
+</div>
 
-```jsx
-import { FiUsers, FiUserPlus } from 'react-icons/fi';
-<FiUsers className='nameOfTheClass'> </FiUsers>;
-```
+## Job Add Page
 
-#### Current React Version
+This page will allow login user add position they just applied and keep tracking in the future.
 
-```
-"react": "^17.0.1",
-"react-dom": "^17.0.1",
-"react-scripts": "4.0.0",
-```
+<div align="center">
+    <img src="./public/images/page-add-job.png" alt="add-job-page" width=60%>
+</div>
 
-#### Alternative fix
+## Profile Page
 
-.env file in the root
-FAST_REFRESH=FALSE
+This is user profile information.
+
+<div align="center">
+    <img src="./public/images/page-profile.png" alt="profile-page" width=60%>
+</div>

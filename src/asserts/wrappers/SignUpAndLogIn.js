@@ -62,7 +62,7 @@ const Wrapper = styled.main`
     cursor: pointer;
   }
 
-  .signup {
+  .submit {
     width: 370px;
     border: none;
     color: white;
@@ -80,13 +80,13 @@ const Wrapper = styled.main`
     border-radius: 10px;
   }
 
-  .signup:hover {
+  .submit:hover {
     background-position: right center; /* change the direction of the change here */
     color: #fff;
     text-decoration: none;
   }
 
-  .login {
+  .redirect {
     border-top: 3px solid white;
     color: black;
     text-align: center;

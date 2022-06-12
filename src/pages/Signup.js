@@ -31,16 +31,18 @@ const Signup = (() => {
           <h3 className="form_title">Sign Up</h3>
         </div>
         <form>
-          <input autoComplete="off" type="email" name="email" placeholder='E-mail' />
-          <input autoComplete="off" type="text" name="name" placeholder='Username' />
-          <input autoComplete="off" type={ !showPassword ? "password" : "text" } name="password" placeholder='Password' onChange={handleChangePassword} />
-          {!showPassword ? <VisibilityOffIcon onClick={handleClickShowPassword} className='seen' /> : <VisibilityIcon onClick={handleClickShowPassword} className='seen' />}
+          <input autoComplete="off" type="email" name="email" placeholder='E-mail'/>
+          <input autoComplete="off" type="text" name="name" placeholder='Username'/>
+          <input autoComplete="off" type={!showPassword ? "password" : "text"} name="password" placeholder='Password'
+                 onChange={handleChangePassword}/>
+          {!showPassword ? <VisibilityOffIcon onClick={handleClickShowPassword} className='seen'/> :
+              <VisibilityIcon onClick={handleClickShowPassword} className='seen'/>}
 
-          <p>Forgot your password?</p>
-          <button className='signup'>Sign Up</button>
+          {/*<p>Forgot your password?</p>*/}
+          <button className='submit'>Sign Up</button>
         </form>
-        <div className='login'>
-          <Link className='link'to="/login"><p>Already has an account? Login</p></Link>
+        <div className='redirect'>
+          <Link className='link' to="/login"><p>Already has an account? Login</p></Link>
         </div>
       </div>
     </Wrapper>

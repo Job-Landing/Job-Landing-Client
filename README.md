@@ -19,5 +19,5 @@ DashBoard includes the following pages:
 
 Expected Layout
 <div align="center">
-    <img src=".public/images/dashboard.png" alt="dashboard-page" width=60%>
+    <img src="./public/images/dashboard.png" alt="dashboard-page" width="60%">
 </div>

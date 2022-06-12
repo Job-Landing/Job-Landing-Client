@@ -1,6 +1,5 @@
 import React from 'react'
 import { JobLandingContext } from '../context/context';
-import styled from 'styled-components';
 
 const List = (() => {
   return (

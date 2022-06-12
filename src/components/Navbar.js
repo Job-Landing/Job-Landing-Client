@@ -10,6 +10,7 @@ const NavBar = () => {
     const openSelect = () => {
         setSelectOpen(!selectOpen)
     }
+
     return (
         <Wrapper>
             <div className='navbar_wrapper'>
@@ -32,7 +33,7 @@ const NavBar = () => {
 }
 
 const Wrapper = styled.section`
-    padding-top: 40px;
+    padding-top: 20px;
     display: flex;
     width: 100%;
     justify-content: flex-end;
@@ -74,10 +75,12 @@ const Wrapper = styled.section`
         width: 200px;
         margin-top: 60px;
         margin-right: 30px;
-        background-color: #696d94;
+        /* background-color: #696d94; */
+        background-color: rgba(124, 129, 175, 0.9);
+        backdrop-filter: blur(6px);
         border-radius: 15px;
     }
-    
+
     p{
         margin-top: 0;
         margin-bottom: 0;

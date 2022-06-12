@@ -35,7 +35,7 @@ const Statistic = () => {
 }
 
 const Wrapper = styled.section`
-    padding: 20px;
+    padding-top: 20px;
     .box_wrapper{
         display: grid;
         grid-template-columns: 1fr 1fr 1fr;

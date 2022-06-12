@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components'
 import { Link } from 'react-router-dom'
-import { Sidebar, Navbar, Statistic } from '../components'
+import { Sidebar, Navbar, Statistic, DashboardTable } from '../components'
 
 const Dashboard = () => {
     return (
@@ -10,6 +10,7 @@ const Dashboard = () => {
             <div className="right">
                 <Navbar />
                 <Statistic />
+                <DashboardTable />
             </div>
         </Wrapper>
     );
@@ -20,6 +21,7 @@ const Wrapper = styled.section`
   height: 100vh;
   .right{
     width: 100vw;
+    padding: 20px 40px 20px 40px;
   }
 `
 

@@ -42,7 +42,7 @@ const Home = (() => {
             </section>
             <section className='information'>
                 <div>
-                    <h1 className='information_title'>Job Streaming</h1>
+                    <h1 className='information_title'>Job Streaming(Guest accessible)</h1>
                     <p className='information_text'>This is the place to show the job position and URL
                                                     that user just added on live </p>
                 </div>

@@ -8,9 +8,9 @@ const List = (() => {
     const [jobs, setJobs] = useState([]);
 
     function createCard(job) {
-        const {company, position, jobLocation, applyUrl} = job;
+        const {company, position, jobLocation, applyUrl, _id} = job;
         return <JobCard company={company} position={position}
-                        jobLocation={jobLocation} applyUrl={applyUrl}
+                        jobLocation={jobLocation} applyUrl={applyUrl} _id={_id}
         />
     }
 
@@ -26,7 +26,7 @@ const List = (() => {
         }
 
         return getJobs();
-    });
+    }, [1]);
 
     return (
         <Wrapper>

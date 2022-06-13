@@ -4,6 +4,8 @@ import VisibilityIcon from '@mui/icons-material/Visibility';
 import VisibilityOffIcon from '@mui/icons-material/VisibilityOff';
 import {Link} from "react-router-dom";
 import Wrapper from "../asserts/wrappers/SignUpAndLogIn";
+
+let signUpAPI = process.env.REACT_APP_BACKEND + "/user/signup"
 const initialState = {
   name: '',
   email: '',
@@ -34,7 +36,7 @@ const Signup = (() => {
       return;
     }
     const newUser = {name: name, email: email, password: password};
-    await fetch("http://localhost:3001/user/signup", {
+    await fetch(signUpAPI, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

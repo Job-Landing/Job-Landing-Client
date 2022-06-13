@@ -1,10 +1,10 @@
 import React from 'react'
-import avatar from '../asserts/images/avatar.jpg'
+import avatar from '../assets/images/avatar.jpg'
 import DashboardRoundedIcon from '@mui/icons-material/DashboardRounded';
 import WorkRoundedIcon from '@mui/icons-material/WorkRounded';
 import WorkHistoryRoundedIcon from '@mui/icons-material/WorkHistoryRounded';
 import PersonRoundedIcon from '@mui/icons-material/PersonRounded';
-import Wrapper from '../asserts/wrappers/NavBar';
+import Wrapper from '../assets/wrappers/NavBar';
 
 const Navbar = () => {
   return (

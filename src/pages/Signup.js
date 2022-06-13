@@ -26,9 +26,25 @@ const Signup = (() => {
   //   e.preventDefault();
   // };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    const {name, email, password} = values
+    const {name, email, password} = values;
+    if (!email || !password || !name) {
+      console.log("can not be empty!");
+      return;
+    }
+    const newUser = {name: name, email: email, password: password};
+    await fetch("http://localhost:3001/user/signup", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(newUser),
+    })
+        .catch(error => {
+          window.alert(error);
+          return;
+        });
   };
 
   return (

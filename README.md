@@ -16,4 +16,20 @@ Teams:
         - [X] Show live stream job added to the data pool by user
     - [X] Page Style Wrapping < *Jaying* >
 - [X] DashBoard Layout < *Maple* >
-    
+
+
+Branch Status:
+- add dashboard draft pages
+- hyperlinked pages
+
+DashBoard includes the following pages:
+- DashTable
+- All Jobs Display
+- Add Job
+- User Profile
+
+Expected Layout
+<div align="center">
+    <img src="./public/images/dashboard.png" alt="dashboard-page" width="60%">
+</div>
+

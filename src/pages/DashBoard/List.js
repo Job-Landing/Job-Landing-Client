@@ -1,10 +1,10 @@
 import React from 'react'
-import { JobLandingContext } from '../context/context';
+import {JobLandingContext} from '../../context/context';
 
 const List = (() => {
   return (
     <div>
-      <h1>List</h1>
+        <h1>List All Jobs Page</h1>
 
     </div>
 

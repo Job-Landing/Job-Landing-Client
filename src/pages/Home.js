@@ -2,9 +2,9 @@ import React from 'react'
 import {JobLandingContext} from '../context/context';
 import {Link} from "react-router-dom";
 import Button from '@mui/material/Button';
-import homeImg from '../asserts/images/homeImg.png'
-import dashImg from '../asserts/images/dashboard.png'
-import Wrapper from '../asserts/wrappers/Home'
+import homeImg from '../assets/images/homeImg.png'
+import dashImg from '../assets/images/dashboard.png'
+import Wrapper from '../assets/wrappers/Home'
 
 
 const Home = (() => {

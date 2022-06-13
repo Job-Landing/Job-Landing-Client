@@ -1,7 +1,7 @@
 import React, {useState} from 'react'
 import styled from 'styled-components';
-import Wrapper from "../asserts/wrappers/SignUpAndLogIn";
-import logo from "../asserts/images/logo.png";
+import Wrapper from "../assets/wrappers/SignUpAndLogIn";
+import logo from "../assets/images/logo.png";
 import VisibilityOffIcon from "@mui/icons-material/VisibilityOff";
 import VisibilityIcon from "@mui/icons-material/Visibility";
 import {Link} from "react-router-dom";

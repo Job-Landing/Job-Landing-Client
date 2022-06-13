@@ -1,6 +1,6 @@
 import React from 'react';
 import {Link, Outlet} from "react-router-dom";
-import Wrapper from '../../asserts/wrappers/DashBoard'
+import Wrapper from '../../assets/wrappers/DashBoard'
 
 const Dashboard = (() => {
     return (

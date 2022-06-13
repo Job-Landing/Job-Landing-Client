@@ -1,9 +1,9 @@
 import React, {useState} from 'react'
-import logo from '../asserts/images/logo.png'
+import logo from '../assets/images/logo.png'
 import VisibilityIcon from '@mui/icons-material/Visibility';
 import VisibilityOffIcon from '@mui/icons-material/VisibilityOff';
 import {Link} from "react-router-dom";
-import Wrapper from "../asserts/wrappers/SignUpAndLogIn";
+import Wrapper from "../assets/wrappers/SignUpAndLogIn";
 
 let signUpAPI = process.env.REACT_APP_BACKEND + "/user/signup"
 const initialState = {

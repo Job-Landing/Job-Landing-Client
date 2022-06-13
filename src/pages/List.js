@@ -1,15 +1,33 @@
 import React from 'react'
-import { JobLandingContext } from '../context/context';
+import { Link } from "react-router-dom";
 import styled from 'styled-components';
+import { Sidebar, Navbar, JobList, JobListTable} from '../components'
+
+
 
 const List = (() => {
-  return (
-    <div>
-      <h1>List</h1>
-
-    </div>
-
-  )
+    return (
+      <Wrapper>
+        <Sidebar />
+        <div className="right">
+          <Navbar />
+          <JobList />
+          <JobListTable />
+        </div>
+      </Wrapper>
+    )
 })
 
+const Wrapper = styled.main`
+    display: flex;
+    height: 100vh;
+    .right{
+        width: 100vw;
+        padding: 20px 40px 20px 40px;
+    }
+
+`
+
 export default List
+
+

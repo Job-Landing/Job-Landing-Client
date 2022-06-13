@@ -37,10 +37,10 @@ const Sidebar = () => {
       <div>
         <h2 className='title'>Management</h2>
         <div className='general-item '>
-          <div className='item out-active'>
+          <Link to='/joblist' className={path==='joblist' ? 'item' :  'item out-active'}>
             <DashboardRoundedIcon className='icon' />
             <p>All Jobs</p>
-          </div>
+          </Link>
           <div className='item out-active'>
             <WorkRoundedIcon className='icon' />
             <p>Add Job</p>

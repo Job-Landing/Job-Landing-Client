@@ -3,12 +3,20 @@ import styled from 'styled-components'
 import IconButton from '@mui/material/IconButton';
 import DeleteIcon from '@mui/icons-material/Delete';
 import Fingerprint from '@mui/icons-material/Fingerprint';
+import Alert from '@mui/material/Alert';
 
 const JobListTable = () => {
+    const [deleteItem, setDeleteItem] = useState('none');
+    const alertFadeIn = ()=>{
+        setDeleteItem('success')
+        setTimeout(() => {
+            setDeleteItem('')
+        }, 2000);
+    }
     return (
-        <Wrapper>
+        <Wrapper className="animate__animated animate__fadeIn">
             <div className='inner_table'>
-                <h2>Job List</h2>
+                <h2>All Jobs</h2>
                 <table className='information_table'>
                     <tbody>
                         <tr className='tr'>
@@ -26,7 +34,7 @@ const JobListTable = () => {
                             <td><span className='pending'>pending</span></td>
                             <td>
                                 <IconButton aria-label="delete" size="large" className='delete_icon'>
-                                    <DeleteIcon fontSize="small" />
+                                    <DeleteIcon fontSize="small" onClick={alertFadeIn} />
                                 </IconButton>
                             </td>
                             <td>
@@ -42,7 +50,7 @@ const JobListTable = () => {
                             <td><span className='interview'>interview</span></td>
                             <td>
                                 <IconButton aria-label="delete" size="large" className='delete_icon'>
-                                    <DeleteIcon fontSize="small" />
+                                    <DeleteIcon fontSize="small" onClick={alertFadeIn} />
                                 </IconButton>
                             </td>
                             <td>
@@ -58,7 +66,7 @@ const JobListTable = () => {
                             <td><span className='offer'>offer</span></td>
                             <td>
                                 <IconButton aria-label="delete" size="large" className='delete_icon'>
-                                    <DeleteIcon fontSize="small" />
+                                    <DeleteIcon fontSize="small"  onClick={alertFadeIn} />
                                 </IconButton>
                             </td>
                             <td>
@@ -74,7 +82,7 @@ const JobListTable = () => {
                             <td><span className='decline'>decline</span></td>
                             <td>
                                 <IconButton aria-label="delete" size="large" className='delete_icon'>
-                                    <DeleteIcon fontSize="small" />
+                                    <DeleteIcon fontSize="small" onClick={alertFadeIn} />
                                 </IconButton>
                             </td>
                             <td>
@@ -86,6 +94,7 @@ const JobListTable = () => {
                     </tbody>
                 </table>
             </div>
+             <Alert className={deleteItem ==='success' ? 'alert animate__animated animate__fadeInRight' : deleteItem ==='none' ? 'none': 'alert animate__animated  animate__fadeOutRight'} severity="error"><strong>Delete success!</strong></Alert>
         </Wrapper>
     );
 }
@@ -188,6 +197,18 @@ const Wrapper = styled.section`
 
     .delete_icon{
         color: white;
+    }
+
+
+    .alert{
+        width: 200px;
+        position: fixed;
+        top: 120px;
+        right: 70px;
+    }
+
+    .none{
+        display: none;
     }
 
 `

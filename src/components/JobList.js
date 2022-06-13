@@ -6,7 +6,7 @@ import FormatListBulletedRoundedIcon from '@mui/icons-material/FormatListBullete
 
 const JobList = () => {
     return (
-        <Wrapper>
+        <Wrapper className="animate__animated animate__fadeIn">
             <div className='box_wrapper_bottom'>
                 <div className='box_wrapper_top'>
                     <div className='box_wrapper1'>

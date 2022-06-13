@@ -3,6 +3,7 @@ import {JobLandingContext} from '../context/context';
 import {Link} from "react-router-dom";
 import Button from '@mui/material/Button';
 import homeImg from '../asserts/images/homeImg.png'
+import dashImg from '../asserts/images/dashboard.png'
 import Wrapper from '../asserts/wrappers/Home'
 
 
@@ -29,7 +30,23 @@ const Home = (() => {
                 </div>
                 <img className='homeImg' src={homeImg} alt="home1"/>
             </section>
-
+            <section className='information'>
+                <div>
+                    <h1 className='information_title'>Using a clear dashboard to organize every job application</h1>
+                    <h2>User will access the dashboard once log in</h2>
+                    <Link className='link' to="dashboard"><Button variant="outlined" size="medium">To DashBoard</Button></Link>
+                </div>
+                <div>
+                    <img className='homeImg' src={dashImg} alt="dash"/>
+                </div>
+            </section>
+            <section className='information'>
+                <div>
+                    <h1 className='information_title'>Job Streaming(Guest accessible)</h1>
+                    <p className='information_text'>This is the place to show the job position and URL
+                                                    that user just added on live </p>
+                </div>
+            </section>
         </Wrapper>
 
 

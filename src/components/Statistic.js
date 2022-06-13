@@ -7,7 +7,7 @@ import decline from '../images/decline.png'
 const Statistic = () => {
     return (
         <Wrapper>
-            <div className="box_wrapper">
+            <div className="box_wrapper animate__animated animate__fadeIn">
                 <div className="box box1">
                     <div>
                         <h5>Pending Application</h5>

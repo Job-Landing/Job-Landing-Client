@@ -41,10 +41,10 @@ const Sidebar = () => {
             <DashboardRoundedIcon className='icon' />
             <p>All Jobs</p>
           </Link>
-          <div className='item out-active'>
+          <Link to='/addjob' className={path==='addjob' ? 'item' :  'item out-active'}>
             <WorkRoundedIcon className='icon' />
             <p>Add Job</p>
-          </div>
+          </Link>
         </div>
       </div>
     </Wrapper>

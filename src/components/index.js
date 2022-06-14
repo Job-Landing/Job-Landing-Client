@@ -3,8 +3,9 @@ import Navbar from './Navbar'
 import Statistic from './Statistic'
 import DashboardTable from './DashboardTable'
 import ProfileUpdate from './ProfileUpdate'
-import JobList from './JobList'
+import InfoBox from './InfoBox'
 import JobListTable from './JobListTable'
+import AddJobForm from './AddJobForm'
 
 export {
   Sidebar,
@@ -12,6 +13,7 @@ export {
   Statistic,
   DashboardTable,
   ProfileUpdate,
-  JobList,
-  JobListTable
+  InfoBox,
+  JobListTable,
+  AddJobForm
 }

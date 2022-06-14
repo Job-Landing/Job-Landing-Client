@@ -1,18 +1,17 @@
 import React from 'react';
 import styled from 'styled-components'
 import { Link } from 'react-router-dom'
-import { Sidebar, Navbar, InfoBox, ProfileUpdate} from '../components'
+import { Sidebar, Navbar, InfoBox, AddJobForm } from '../components'
 
-
-const Profile = () => {
+const AddJob = () => {
     return (
         <Wrapper>
-          <Sidebar />
-        <div className="right">
-          <Navbar />
-          <InfoBox />
-          <ProfileUpdate />
-          </div>
+            <Sidebar />
+            <div className="right">
+                <Navbar />
+                <InfoBox />
+                <AddJobForm />
+            </div>
         </Wrapper>
     );
 }
@@ -26,4 +25,4 @@ const Wrapper = styled.section`
   }
 `
 
-export default Profile;
+export default AddJob;

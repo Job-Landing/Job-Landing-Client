@@ -5,7 +5,7 @@ import {
   Routes,
   Route,
 } from "react-router-dom";
-import { Home, Dashboard, Profile, Login, Signup, List, Error } from './pages';
+import { Home, Dashboard, Profile, AddJob, Login, Signup, List, Error } from './pages';
 import 'animate.css';
 
 function App() {
@@ -16,6 +16,7 @@ function App() {
         <Route path="/dashboard" element={<Dashboard />} ></Route>
         <Route path="/profile" element={<Profile />} ></Route>
         <Route path="/joblist" element={<List />} ></Route>
+        <Route path="/addjob" element={<AddJob />} ></Route>
         <Route path="/login" element={<Login />} ></Route>
         <Route path="/signup" element={<Signup />} ></Route>
         <Route path="*" element={<Error />} ></Route>

@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from "react-router-dom";
 import styled from 'styled-components';
-import { Sidebar, Navbar, JobList, JobListTable} from '../components'
+import { Sidebar, Navbar, InfoBox, JobListTable} from '../components'
 
 
 
@@ -11,7 +11,7 @@ const List = (() => {
         <Sidebar />
         <div className="right">
           <Navbar />
-          <JobList />
+          <InfoBox />
           <JobListTable />
         </div>
       </Wrapper>

@@ -9,13 +9,20 @@ const initialState = {
   email: '',
   password: ''
 }
+// const validateState = {
+//   character: false,
+//   number: false,
+//   uppercase: false,
+//   lowercase: false
+// }
 
 const Signup = (() => {
   const [values, setValues] = useState(initialState);
   const [showPassword, setShowPassword] = useState(false);
+  // const [passwordValidate, setPasswordValidate] = useState(validateState);
 
   const handleChange = (e) => {
-    setValues({...values, [e.target.name]: e.target.value})
+    setValues({ ...values, [e.target.name]: e.target.value })
   }
 
   const handleClickShowPassword = () => {
@@ -67,10 +74,32 @@ const Signup = (() => {
                 <VisibilityIcon onClick={handleClickShowPassword} className='seen'/>}
 
             {/*<p>Forgot your password?</p>*/}
+            {/* <div className="password_validate">
+            <p className="password_text">Password must contain</p>
+            <br />
+              <div className="validate_wrapper">
+                <div className="validate_item">
+                  <div className={passwordValidate.character ? 'bullet_green' : 'bullet_red'}></div>
+                  <p className="validate_msg">8 - 20 characters</p>
+                </div>
+                <div className="validate_item">
+                  <div className={passwordValidate.number ? 'bullet_green' : 'bullet_red'}></div>
+                  <p className="validate_msg">1 or more numbers</p>
+                </div>
+                <div className="validate_item">
+                  <div className={passwordValidate.uppercase ? 'bullet_green' : 'bullet_red'}></div>
+                  <p className="validate_msg">upper-case letter</p>
+                </div>
+                <div className="validate_item">
+                  <div className={passwordValidate.lowercase ? 'bullet_green' : 'bullet_red'}></div>
+                  <p className="validate_msg">lower-case letter</p>
+                </div>
+              </div>
+            </div> */}
             <button className='submit'>Sign Up</button>
           </form>
           <div className='redirect'>
-            <Link className='link' to="/login"><p>Already has an account? Login</p></Link>
+            <Link className='link' to="/login"><p className='forgot_password'>Already has an account? Login</p></Link>
           </div>
         </div>
     </Wrapper>

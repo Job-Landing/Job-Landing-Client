@@ -46,13 +46,52 @@ const Wrapper = styled.main`
     box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
     transition: 0.5s;
   }
-  p {
+  .forgot_password{
     color: black;
     font-size: 12px;
     font-weight: 500;
     margin-top: 15px;
     cursor: pointer;
   }
+  .password_validate{
+    width: 370px;
+  }
+  .password_text {
+    color: black;
+    font-size: 12px;
+    font-weight: 500;
+    margin: 0;
+    float:left;
+  }
+  .validate_wrapper{
+    color: black;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+  .validate_msg{
+    margin: 0;
+    font-size: 12px;
+    padding: 3px 3px 3px 8px;
+  }
+  .bullet_green{
+    width:8px;
+    height: 8px;
+    background-color: #86f09d;
+    border-radius: 50%;
+  }
+  .bullet_red{
+    width:8px;
+    height: 8px;
+    background-color: #F47C7C;
+    border-radius: 50%;
+  }
+  .validate_item{
+    display: flex;
+    text-align: center;
+    align-items: center;
+  }
+
+
   .submit {
     width: 370px;
     border: none;

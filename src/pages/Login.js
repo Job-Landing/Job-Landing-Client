@@ -25,11 +25,11 @@ const Login = (() => {
                     <input autoComplete="off" type="email" name="email" placeholder='E-mail'/>
                     <input autoComplete="off" type={"password"} name="password" placeholder='Password'
                            onChange={handleChangePassword}/>
-                    <p>Forgot your password?</p>
+                    <p className="forgot_password">Forgot your password?</p>
                     <button className='submit'>Log In</button>
                 </form>
                 <div className='redirect'>
-                    <Link className='link' to="/signUp"><p>Do not got an account? Sign Up</p></Link>
+                    <Link className='link' to="/signUp"><p className="forgot_password">Do not got an account? Sign Up</p></Link>
                 </div>
             </div>
         </Wrapper>

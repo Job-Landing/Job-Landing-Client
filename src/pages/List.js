@@ -3,8 +3,6 @@ import { Link } from "react-router-dom";
 import styled from 'styled-components';
 import { Sidebar, Navbar, InfoBox, JobListTable} from '../components'
 
-
-
 const List = (() => {
     return (
       <Wrapper>

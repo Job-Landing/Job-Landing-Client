@@ -7,6 +7,7 @@ import InfoBox from './InfoBox'
 import JobListTable from './JobListTable'
 import AddJobForm from './AddJobForm'
 import JobStreaming from './JobStreaming'
+import HomeNavbar from './HomeNavbar'
 
 export {
   Sidebar,
@@ -17,5 +18,6 @@ export {
   InfoBox,
   JobListTable,
   AddJobForm,
-  JobStreaming
+  JobStreaming,
+  HomeNavbar
 }

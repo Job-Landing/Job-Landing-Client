@@ -4,7 +4,8 @@ import Wrapper from "../asserts/wrappers/SignUpAndLogIn";
 import logo from "../asserts/images/logo.png";
 import VisibilityOffIcon from "@mui/icons-material/VisibilityOff";
 import VisibilityIcon from "@mui/icons-material/Visibility";
-import {Link} from "react-router-dom";
+import { Link } from "react-router-dom";
+import { HomeNavbar } from '../components'
 
 const Login = (() => {
 
@@ -16,6 +17,7 @@ const Login = (() => {
 
     return (
         <Wrapper>
+            <HomeNavbar />
             <img className="logo" src={logo} alt="logo"/>
             <div className="form_wrapper">
                 <div className="form_wrapper_1">

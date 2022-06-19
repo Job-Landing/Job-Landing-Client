@@ -5,6 +5,7 @@ import Button from '@mui/material/Button';
 import homeImg from '../asserts/images/homeImg.png'
 import dashImg from '../asserts/images/dashboard.jpg'
 import Wrapper from '../asserts/wrappers/Home'
+import { HomeNavbar } from '../components'
 
 
 const Home = (() => {
@@ -12,14 +13,7 @@ const Home = (() => {
     const {example, setExample} = React.useContext(JobLandingContext);
     return (
         <Wrapper>
-            <div className='wrapper'>
-                <div className='inner_wrapper'>
-                    <h3 class='title'>Job Landing</h3>
-                    <span className='vertical_line'></span>
-                    <Link className='link' to="signup"><Button variant="outlined" size="medium">Sign up</Button></Link>
-                    <Link className='link' to="login"><Button variant="contained" size="medium">Login</Button></Link>
-                </div>
-            </div>
+            <HomeNavbar />
             <section className='information'>
                 <div>
                     <h1 class='information_title'>Use your skill to gain more jobs</h1>

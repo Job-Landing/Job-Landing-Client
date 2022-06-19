@@ -5,6 +5,7 @@ import DashboardRoundedIcon from '@mui/icons-material/DashboardRounded';
 import WorkRoundedIcon from '@mui/icons-material/WorkRounded';
 import PersonRoundedIcon from '@mui/icons-material/PersonRounded';
 import Wrapper from '../asserts/wrappers/Sidebar'
+import StreamIcon from '@mui/icons-material/Stream';
 
 
 const Sidebar = () => {
@@ -43,6 +44,10 @@ const Sidebar = () => {
           <Link to='/addjob' className={path==='addjob' ? 'item' :  'item out-active'}>
             <WorkRoundedIcon className='icon' />
             <p>Add Job</p>
+          </Link>
+          <Link to='/jobstreaming' className={path==='jobstreaming' ? 'item' :  'item out-active'}>
+            <StreamIcon className='icon' />
+            <p>Job Streaming</p>
           </Link>
         </div>
       </div>

@@ -1,16 +1,18 @@
 import React from 'react';
 import styled from 'styled-components'
 import { Link } from 'react-router-dom'
-import { Sidebar, Navbar, InfoBox, AddJobForm } from '../components'
+import { Sidebar, Navbar, InfoBox, AddJobForm, JobListTable, JobStreaming } from '../components'
 
-const AddJob = () => {
+const Management = () => {
+    const path = window.location.pathname.replace("/", "")
     return (
         <Wrapper>
             <Sidebar />
             <div className="right">
                 <Navbar />
                 <InfoBox />
-                <AddJobForm />
+                {path==='joblist' ? <JobListTable /> : path==='addjob' ? <AddJobForm /> : <JobStreaming />}
+                {/* <AddJobForm /> */}
             </div>
         </Wrapper>
     );
@@ -25,4 +27,4 @@ const Wrapper = styled.section`
   }
 `
 
-export default AddJob;
+export default Management;

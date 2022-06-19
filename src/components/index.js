@@ -6,6 +6,7 @@ import ProfileUpdate from './ProfileUpdate'
 import InfoBox from './InfoBox'
 import JobListTable from './JobListTable'
 import AddJobForm from './AddJobForm'
+import JobStreaming from './JobStreaming'
 
 export {
   Sidebar,
@@ -15,5 +16,6 @@ export {
   ProfileUpdate,
   InfoBox,
   JobListTable,
-  AddJobForm
+  AddJobForm,
+  JobStreaming
 }

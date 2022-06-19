@@ -3,7 +3,9 @@ import styled from 'styled-components'
 import FormatListBulletedRoundedIcon from '@mui/icons-material/FormatListBulletedRounded';
 import FaceRoundedIcon from '@mui/icons-material/FaceRounded';
 import AddTaskRoundedIcon from '@mui/icons-material/AddTaskRounded';
+import LiveTvIcon from '@mui/icons-material/LiveTv';
 import Wrapper from '../asserts/wrappers/InfoBox'
+
 
 const InfoBox = () => {
     const path = window.location.pathname.replace("/", "")
@@ -15,10 +17,12 @@ const InfoBox = () => {
             <div className='box_wrapper_bottom'>
                 <div className='box_wrapper_top'>
                     <div className='box_wrapper1'>
-                        {path === 'profile' ? <FaceRoundedIcon className='icon' /> : path === 'joblist' ? <FormatListBulletedRoundedIcon className='icon' /> : <AddTaskRoundedIcon className='icon' /> }
+                        {
+                            path === 'profile' ? <FaceRoundedIcon className='icon' /> : path === 'joblist' ? <FormatListBulletedRoundedIcon className='icon' /> : path === 'addjob' ? <AddTaskRoundedIcon className='icon' /> : <LiveTvIcon className='icon' />
+                        }
                     </div>
                     <div className='box_wrapper2'>
-                        <h5>{path === 'profile' ? 'Profile' : path === 'joblist' ? 'Job List' : 'Add Job' }</h5>
+                        <h5>{path === 'profile' ? 'Profile' : path === 'joblist' ? 'Job List' : path ==='addjob' ? 'Add Job' : 'Job Streaming' }</h5>
                         <div className='row1'></div>
                         <div className='row2'></div>
                     </div>

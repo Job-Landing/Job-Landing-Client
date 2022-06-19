@@ -4,6 +4,8 @@ import DeleteIcon from '@mui/icons-material/Delete';
 import Fingerprint from '@mui/icons-material/Fingerprint';
 import Alert from '@mui/material/Alert';
 import Wrapper from '../asserts/wrappers/JobListTable'
+import axios from 'axios';
+import { BASE_URL } from '../utils/constant'
 
 const JobListTable = () => {
     const [deleteItem, setDeleteItem] = useState('none');
@@ -13,6 +15,12 @@ const JobListTable = () => {
             setDeleteItem('')
         }, 2000);
     }
+
+    const getJobList = async () => {
+        const response = await axios(`${BASE_URL}/job`)
+    }
+
+
     return (
         <Wrapper className="animate__animated animate__fadeIn">
             <div className='inner_table'>

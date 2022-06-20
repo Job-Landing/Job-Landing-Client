@@ -53,11 +53,13 @@ const Wrapper = styled.section`
   .profile{
     display: flex;
     background-color:  #8489ba;
+
     width: 240px;
     padding: 15px 15px 15px 20px;
     border-radius: 20px;
   }
   .profile_info{
+
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
@@ -74,6 +76,7 @@ const Wrapper = styled.section`
     font-size: 14px;
   }
   .item{
+
     display: flex;
     background-color: #696d94;
     width: 250px;
@@ -83,6 +86,7 @@ const Wrapper = styled.section`
     color: #1e203b;
   }
   p{
+
     margin-top: 0;
     margin-bottom: 0;
     margin-left: 20px;
@@ -94,11 +98,13 @@ const Wrapper = styled.section`
     background-color:transparent !important;
   }
   img{
+
     width: 60px;
     height: 60px;
     border-radius: 50%;
   }
   .title{
+
     margin-top: 40px;
     margin-left: 20px;
   }

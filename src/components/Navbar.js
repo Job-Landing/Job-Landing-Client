@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
 import styled from 'styled-components'
 import { Link } from 'react-router-dom'
+
 import avatar from '../images/avatar.jpg'
 import SearchRoundedIcon from '@mui/icons-material/SearchRounded';
 
@@ -19,12 +20,14 @@ const NavBar = () => {
             </div>
             <div className='arrow_up' style={selectOpen ? { visibility: "visible" } : {visibility: "hidden"}}></div>
             <div className='select' style={selectOpen ? { visibility: "visible" } : {visibility: "hidden"}}>
+
                 <p>Zanyuan Yang</p>
                 <p>jayingyoung@gmail.com</p>
                 <hr></hr>
                 <p>Home</p>
                 <p>Profile</p>
                 <hr />
+
                 <p>Logout</p>
             </div>
 

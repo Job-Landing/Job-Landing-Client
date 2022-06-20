@@ -1,6 +1,5 @@
 import React from 'react';
-import styled from 'styled-components'
-import {Link} from 'react-router-dom'
+import Wrapper from '../asserts/wrappers/Profile'
 import {Sidebar, Navbar, InfoBox, ProfileUpdate} from '../components'
 
 
@@ -17,13 +16,5 @@ const Profile = () => {
     );
 }
 
-const Wrapper = styled.section`
-  display: flex;
-  height: 100vh;
-  .right{
-    width: 100vw;
-    padding: 20px 40px 20px 40px;
-  }
-`
 
 export default Profile;

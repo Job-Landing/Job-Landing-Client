@@ -5,7 +5,7 @@ import Button from '@mui/material/Button';
 import homeImg from '../asserts/images/homeImg.png'
 import dashImg from '../asserts/images/dashboard.jpg'
 import Wrapper from '../asserts/wrappers/Home'
-import { HomeNavbar } from '../components'
+import { HomeNavbar, JobStreaming } from '../components'
 
 
 const Home = (() => {
@@ -27,7 +27,7 @@ const Home = (() => {
             <section className='information'>
                 <div>
                     <h1 className='information_title'>Using a clear dashboard to organize every job application</h1>
-                    <h2>User will access the dashboard once log in</h2>
+                    <p className='information_text'>User will access the dashboard once log in</p>
                     <Link className='link' to="dashboard"><Button variant="outlined" size="medium">To DashBoard</Button></Link>
                 </div>
                 <div>
@@ -38,8 +38,10 @@ const Home = (() => {
                 <div>
                     <h1 className='information_title'>Job Streaming(Guest accessible)</h1>
                     <p className='information_text'>This is the place to show the job position and URL
-                                                    that user just added on live </p>
+                        that user just added on live </p>
+                    <Link className='link' to="/jobstreaming"><Button variant="outlined" size="medium">Access more</Button></Link>
                 </div>
+                <JobStreaming />
             </section>
         </Wrapper>
 

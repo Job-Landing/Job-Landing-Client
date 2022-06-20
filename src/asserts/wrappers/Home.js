@@ -54,6 +54,7 @@ const Wrapper = styled.main`
   }
   .information_text {
     font-size: 20px;
+    color: #d1d1d1;
   }
   .homeImg {
     height: 350px;
@@ -66,6 +67,9 @@ const Wrapper = styled.main`
     }
     .homeImg {
       display: none;
+    }
+    .inner_wrapper{
+      width: 90%;
     }
   }
 `

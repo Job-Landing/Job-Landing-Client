@@ -4,6 +4,8 @@ import axios from 'axios';
 import { BASE_URL } from '../utils/constant'
 
 const JobStreaming = () => {
+    const path = window.location.pathname.replace("/", "")
+
     const [streamItem, setStreamItem] = useState([]);
 
     const getJobStreamingList = async () => {
@@ -22,7 +24,7 @@ const JobStreaming = () => {
     return (
         <Wrapper className="animate__animated animate__fadeIn">
             <div className='inner_table'>
-                <h2>All Jobs</h2>
+                <h2>Job Streaming</h2>
                 <table className='information_table'>
                     <tbody>
                         <tr className='tr'>
@@ -32,15 +34,28 @@ const JobStreaming = () => {
                             <th>Create Time</th>
                             <th className='last_column'>Status</th>
                         </tr>
-                        {streamItem.map((item) => {
-                            return <tr key={item._id}>
-                                <td>{item.position}</td>
-                                <td>{item.company}</td>
-                                <td>{item.applyUrl}</td>
-                                <td>May 23, 2022</td>
-                                <td><span className='pending'>pending</span></td>
-                            </tr>
-                        })}
+                        {path === 'jobstream' ?
+                            streamItem.map((item) => {
+                                return <tr key={item._id}>
+                                    <td>{item.position}</td>
+                                    <td>{item.company}</td>
+                                    <td>{item.applyUrl}</td>
+                                    <td>May 23, 2022</td>
+                                    <td><span className='pending'>pending</span></td>
+                                </tr>
+                            })
+                        :
+                            streamItem.slice(0, 5).map((item) => {
+                                return <tr key={item._id}>
+                                    <td>{item.position}</td>
+                                    <td>{item.company}</td>
+                                    <td>{item.applyUrl}</td>
+                                    <td>May 23, 2022</td>
+                                    <td><span className='pending'>pending</span></td>
+                                </tr>
+                            })
+                        }
+
                         <tr>
                             <td>Software Engineer Intern</td>
                             <td>Google</td>

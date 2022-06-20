@@ -44,6 +44,8 @@ const Wrapper = styled.main`
   }
   .right{
     flex: 2;
+    display: flex;
+    justify-content: center;
   }
   .login{
     position: absolute;
@@ -60,9 +62,6 @@ const Wrapper = styled.main`
   }
   .form_wrapper {
     height: 500px;
-    width: 450px;
-    margin-left: auto;
-    margin-right: auto;
   }
   .form_title {
     color: black;
@@ -183,6 +182,19 @@ const Wrapper = styled.main`
     background-color: #21262d;
     border-radius: 50%;
 
+  }
+
+
+  @media only screen and (max-width: 800px) {
+    .left{
+      display: none;
+    }
+    .main{
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
   }
 `
 

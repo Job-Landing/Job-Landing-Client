@@ -4,8 +4,9 @@ import Statistic from './Statistic'
 import DashboardTable from './DashboardTable'
 
 export {
-    Sidebar,
-    Navbar,
-    Statistic,
-    DashboardTable
+  Sidebar,
+  Navbar,
+  Statistic,
+  DashboardTable
+
 }

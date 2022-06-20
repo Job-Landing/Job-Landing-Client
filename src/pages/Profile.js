@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components'
-import { Link } from 'react-router-dom'
-import { Sidebar, Navbar, ProfileUpdate} from '../components'
+import {Link} from 'react-router-dom'
+import {Sidebar, Navbar, InfoBox, ProfileUpdate} from '../components'
 
 
 const Profile = () => {
@@ -9,8 +9,9 @@ const Profile = () => {
         <Wrapper>
           <Sidebar />
         <div className="right">
-          <Navbar />
-          <ProfileUpdate />
+            <Navbar/>
+            <InfoBox/>
+            <ProfileUpdate/>
           </div>
         </Wrapper>
     );

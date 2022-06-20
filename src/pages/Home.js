@@ -2,9 +2,10 @@ import React from 'react'
 import {JobLandingContext} from '../context/context';
 import {Link} from "react-router-dom";
 import Button from '@mui/material/Button';
-import homeImg from '../assets/images/homeImg.png'
-import dashImg from '../assets/images/dashboard.png'
-import Wrapper from '../assets/wrappers/Home'
+import homeImg from '../asserts/images/homeImg.png'
+import dashImg from '../asserts/images/dashboard.jpg'
+import Wrapper from '../asserts/wrappers/Home'
+import {HomeNavbar, JobStreaming} from '../components'
 
 
 const Home = (() => {
@@ -12,14 +13,7 @@ const Home = (() => {
     const {example, setExample} = React.useContext(JobLandingContext);
     return (
         <Wrapper>
-            <div className='wrapper'>
-                <div className='inner_wrapper'>
-                    <h3 class='title'>Job Landing</h3>
-                    <span className='vertical_line'></span>
-                    <Link className='link' to="signup"><Button variant="outlined" size="medium">Sign up</Button></Link>
-                    <Link className='link' to="login"><Button variant="contained" size="medium">Login</Button></Link>
-                </div>
-            </div>
+            <HomeNavbar/>
             <section className='information'>
                 <div>
                     <h1 class='information_title'>Use your skill to gain more jobs</h1>
@@ -33,7 +27,7 @@ const Home = (() => {
             <section className='information'>
                 <div>
                     <h1 className='information_title'>Using a clear dashboard to organize every job application</h1>
-                    <h2>User will access the dashboard once log in</h2>
+                    <p className='information_text'>User will access the dashboard once log in</p>
                     <Link className='link' to="dashboard"><Button variant="outlined" size="medium">To DashBoard</Button></Link>
                 </div>
                 <div>
@@ -45,7 +39,10 @@ const Home = (() => {
                     <h1 className='information_title'>Job Streaming(Guest accessible)</h1>
                     <p className='information_text'>This is the place to show the job position and URL
                                                     that user just added on live </p>
+                    <Link className='link' to="/jobstreaming"><Button variant="outlined" size="medium">Access
+                                                                                                       more</Button></Link>
                 </div>
+                <JobStreaming/>
             </section>
         </Wrapper>
 
@@ -55,5 +52,3 @@ const Home = (() => {
 
 
 export default Home
-
-

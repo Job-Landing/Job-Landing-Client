@@ -1,6 +1,7 @@
 import React from 'react';
+import styled from 'styled-components'
 import {Link} from 'react-router-dom'
-import Wrapper from '../assets/wrappers/Error'
+import Wrapper from '../asserts/wrappers/Error'
 
 const Error = () => {
     return (
@@ -15,5 +16,6 @@ const Error = () => {
         </Wrapper>
     );
 }
+
 
 export default Error;

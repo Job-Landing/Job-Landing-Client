@@ -1,5 +1,6 @@
 import React from 'react';
-import { Link } from 'react-router-dom'
+import styled from 'styled-components'
+import {Link} from 'react-router-dom'
 import { Sidebar, Navbar, Statistic, DashboardTable } from '../components'
 
 const Dashboard = () => {

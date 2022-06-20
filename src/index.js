@@ -4,12 +4,15 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { JobLandingProvider } from './context/context';
+import { BrowserRouter} from 'react-router-dom';
 
 ReactDOM.render(
   <React.StrictMode>
-    <JobLandingProvider>
-      <App />
-    </JobLandingProvider>
+    <BrowserRouter>
+      <JobLandingProvider>
+        <App />
+      </JobLandingProvider>
+    </BrowserRouter>
   </React.StrictMode>,
   document.getElementById('root')
 );

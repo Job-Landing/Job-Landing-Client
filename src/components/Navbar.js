@@ -3,8 +3,10 @@ import { Link } from 'react-router-dom'
 import avatar from '../asserts/images/avatar.jpg'
 import SearchRoundedIcon from '@mui/icons-material/SearchRounded';
 import Wrapper from '../asserts/wrappers/NavBar'
+import {JobLandingContext} from '../context/context';
 
 const NavBar = () => {
+    const { user, logout } = React.useContext(JobLandingContext);
     const [selectOpen, setSelectOpen] = useState(false);
 
     const openSelect = () => {
@@ -19,13 +21,13 @@ const NavBar = () => {
             </div>
             <div className='arrow_up' style={selectOpen ? { visibility: "visible" } : {visibility: "hidden"}}></div>
             <div className='select' style={selectOpen ? { visibility: "visible" } : {visibility: "hidden"}}>
-                <p>Zanyuan Yang</p>
-                <p>jayingyoung@gmail.com</p>
+                <p>{user.username}</p>
+                <p>{user.email}</p>
                 <hr></hr>
                 <p>Home</p>
                 <p>Profile</p>
                 <hr />
-                <p>Logout</p>
+                <p onClick={logout}>Logout</p>
             </div>
 
         </Wrapper>

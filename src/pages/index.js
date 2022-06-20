@@ -5,5 +5,6 @@ import Management from './Management';
 import Login from './Login';
 import Signup from './Signup';
 import Error from './Error';
+import PrivateRoute from './PrivateRoute';
 
-export { Home, Login, Signup, Dashboard, Profile, Error, Management  };
+export { Home, Login, Signup, Dashboard, Profile, Error, Management, PrivateRoute  };

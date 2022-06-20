@@ -3,8 +3,10 @@ import avatar from '../asserts/images/avatar.jpg'
 import Button from '@mui/material/Button';
 import Alert from '@mui/material/Alert';
 import Wrapper from '../asserts/wrappers/ProfileUpdate'
+import {JobLandingContext} from '../context/context';
 
 const ProfileUpdate = () => {
+    const { user } = React.useContext(JobLandingContext);
     const [updateStatus, setUpdateStatus] = useState('none');
     const alertFadeIn = ()=>{
         setUpdateStatus('success')
@@ -18,8 +20,8 @@ const ProfileUpdate = () => {
                 <div className='information_wrapper'>
                     <img className='avatar' src={avatar} alt="avatar" />
                     <div className='information'>
-                        <p>Zanyuan Yang</p>
-                        <p>jayingyoung@gmail.com</p>
+                        <p>{user.username}</p>
+                        <p>{user.email}</p>
                     </div>
                 </div>
                 <div className='form_wrapper'>
@@ -30,7 +32,7 @@ const ProfileUpdate = () => {
                         </div>
                         <div className='form_row'>
                             <label>Email</label> <br />
-                            <input type="email" name="email" placeholder='E-mail' value='jayingyoung@gmail.com' disabled />
+                            <input type="email" name="email" placeholder='E-mail' value={user.email} disabled />
                         </div>
                         <div className='form_row'>
                             <label>Password</label> <br />

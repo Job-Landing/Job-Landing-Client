@@ -1,17 +1,23 @@
 import React, {useState} from 'react'
-import styled from 'styled-components';
 import Wrapper from "../asserts/wrappers/SignUpAndLogIn";
 import VisibilityOffIcon from "@mui/icons-material/VisibilityOff";
 import VisibilityIcon from "@mui/icons-material/Visibility";
 import { Link } from "react-router-dom";
 import { HomeNavbar } from '../components'
-import login from '../asserts/images/login.png'
+import loginImg from '../asserts/images/login.png'
+import { BASE_URL } from '../utils/constant'
+import axios from 'axios';
+import {JobLandingContext} from '../context/context';
 
 const Login = (() => {
-
+    const { login } = React.useContext(JobLandingContext);
+    const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [showPassword, setShowPassword] = useState(false);
 
+    const handleChangeEmail = (e) => {
+        setEmail(e.target.value)
+    }
     const handleChangePassword = (e) => {
         setPassword(e.target.value)
     }
@@ -20,6 +26,17 @@ const Login = (() => {
         setShowPassword(!showPassword)
     };
 
+    const loginValidator = async (e) => {
+        e.preventDefault();
+        const user = {email: email, password: password}
+        const response = await axios.post(`${BASE_URL}/user/signin`, user)
+        if (!response) {
+            throw new Error('wrong password or email')
+        }
+        login(response.data);
+        console.log(response);
+    }
+
     return (
         <Wrapper>
             <HomeNavbar />
@@ -27,7 +44,7 @@ const Login = (() => {
                 <div className='left'>
                     <div className='left_inner'>
                         <p className='text_login'>Hi, Welcome Back</p>
-                        <img className='register_img' src={login} alt="register" />
+                        <img className='register_img' src={loginImg} alt="register" />
                     </div>
                 </div>
                 <div className='right'>
@@ -38,12 +55,12 @@ const Login = (() => {
                             <p className='form_title1'>Enter your details below.</p>
                         </div>
                         <form>
-                            <input autoComplete="off" type="email" name="email" placeholder='E-mail'/>
+                            <input autoComplete="off" type="email" name="email" placeholder='E-mail' onChange={handleChangeEmail}/>
                             <input autoComplete="off" type={!showPassword ? "password" : "text"} name="password" placeholder='Password'
                                 onChange={handleChangePassword} />
                             {!showPassword ? <VisibilityOffIcon onClick={handleClickShowPassword} className='seen'/> :
                   <VisibilityIcon onClick={handleClickShowPassword} className='seen'/>}
-                            <button className='submit'>Log In</button>
+                            <button className='submit' onClick={loginValidator}>Log In</button>
                         </form>
                     </div>
                 </div>

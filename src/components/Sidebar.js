@@ -1,12 +1,17 @@
-import React from 'react'
+import React, {useState} from 'react'
 import styled from 'styled-components'
 import avatar from '../images/avatar.jpg'
+import { Link, useLocation } from 'react-router-dom'
 import DashboardRoundedIcon from '@mui/icons-material/DashboardRounded';
 import WorkRoundedIcon from '@mui/icons-material/WorkRounded';
 import WorkHistoryRoundedIcon from '@mui/icons-material/WorkHistoryRounded';
 import PersonRoundedIcon from '@mui/icons-material/PersonRounded';
 
+
 const Sidebar = () => {
+  const path = window.location.pathname.replace("/", "")
+  const [pathname, setPathname] = useState(path);
+
   return (
     <Wrapper>
       <div className='profile'>
@@ -19,14 +24,14 @@ const Sidebar = () => {
       <div>
         <h2 className='title'>GENERAL</h2>
         <div className='general-item'>
-          <div className='item'>
+          <Link to='/dashboard' className={path==='dashboard' ? 'item' :  'item out-active'}>
             <DashboardRoundedIcon className='icon' />
             <p>Dashboard</p>
-          </div>
-          <div className='item out-active'>
+          </Link>
+          <Link to='/profile' className={path==='profile' ? 'item' :  'item out-active'}>
             <PersonRoundedIcon className='icon' />
             <p>Profile</p>
-          </div>
+          </Link>
         </div>
       </div>
       <div>
@@ -84,6 +89,7 @@ const Wrapper = styled.section`
     padding: 15px 15px 15px 20px;
     margin-bottom: 10px;
     color: #1e203b;
+    text-decoration: none;
   }
   p{
 

@@ -82,6 +82,7 @@ const Wrapper = styled.section`
         background-color: rgba(124, 129, 175, 0.9);
         backdrop-filter: blur(6px);
         border-radius: 15px;
+        z-index: 100;
     }
 
     p{

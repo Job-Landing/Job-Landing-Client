@@ -14,6 +14,7 @@ const Statistic = () => {
                         <h2>100</h2>
                     </div>
                     <img src={pending} alt="pending" />
+
                 </div>
                 <div className="box box2">
                     <div>
@@ -21,6 +22,7 @@ const Statistic = () => {
                         <h2>100</h2>
                     </div>
                     <img src={schedule} alt="pending" />
+
                 </div>
                 <div className="box box3">
                     <div>
@@ -28,6 +30,7 @@ const Statistic = () => {
                         <h2>100</h2>
                     </div>
                     <img src={decline} alt="pending" />
+
                 </div>
             </div>
         </Wrapper>
@@ -61,6 +64,7 @@ const Wrapper = styled.section`
     img{
         width: 180px;
     }
+
 `
 
 export default Statistic

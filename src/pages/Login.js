@@ -26,7 +26,7 @@ const Login = (() => {
                 <form>
                     <input autoComplete="off" type="email" name="email" placeholder='E-mail'/>
                     <input autoComplete="off" type={"password"} name="password" placeholder='Password'
-                           onChange={handleChangePassword}/>
+                        onChange={handleChangePassword}/>
                     <p className="forgot_password">Forgot your password?</p>
                     <button className='submit'>Log In</button>
                 </form>

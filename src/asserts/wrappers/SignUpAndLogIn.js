@@ -32,6 +32,13 @@ const Wrapper = styled.main`
     margin-top: 100px;
     margin-bottom: 20px;
   }
+  .text_login{
+    font-size: 28px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    margin-top: 150px;
+    margin-bottom: 50px;
+  }
   .register_img{
     width: 100%;
   }
@@ -64,6 +71,12 @@ const Wrapper = styled.main`
     color: white;
     margin-top: 80px;
     padding: 2px;
+    margin-bottom: 0;
+  }
+  .form_title1{
+    color: rgb(145, 158, 171);
+    margin-top:10px;
+    padding: 2px;
   }
   form {
     display: flex;
@@ -83,13 +96,6 @@ const Wrapper = styled.main`
   }
   input:hover{
     border: 2px solid white;
-  }
-  .forgot_password{
-    color: black;
-    font-size: 12px;
-    font-weight: 500;
-    margin-top: 15px;
-    cursor: pointer;
   }
   .password_validate{
     width: 370px;

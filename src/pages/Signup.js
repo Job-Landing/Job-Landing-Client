@@ -72,6 +72,7 @@ const Signup = (() => {
           <div className="form_wrapper">
             <p className='login'>Already has an account? <Link to='/login' className='link link_to_login'>Login</Link></p>
             <p className="form_title">Get started absolutely free.</p>
+            <p className='form_title1'>Free forever. No credit card needed.</p>
             <form onSubmit={handleSubmit}>
               <input autoComplete="off" type="email" name="email" value={values.email} placeholder='E-mail'
                     onChange={handleChange}/>

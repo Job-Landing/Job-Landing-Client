@@ -7,20 +7,17 @@ Teams:
 - Siheng Wei
 - Maple Feng Zhu
 
-## Iteration 1 Update
-- [X] React Setup < *Jaying* >
-- [X] Landing Page
-    - Content Editing < *Maple* >
-        - [X] Explain what is job landing board to user
-        - [X] Display the dashboard layout
-        - [X] Show live stream job added to the data pool by user
-    - [X] Page Style Wrapping < *Jaying* >
-- [X] DashBoard Layout < *Maple* >
+## Iteration 2 Update
+- [X] DashBoard UI Contents < *Jaying* >
+    - [X] Page Layout
+    - [X] Animation
+    - [X] Add relavent pictures
+- [ ] Link the Back-end Data to DashBoard < *Maple* >
+- [X] Add Profile Editing Page
 
 
 Branch Status:
-- add dashboard draft pages
-- hyperlinked pages
+- add dashboard v2.0 pages
 
 DashBoard includes the following pages:
 - DashTable

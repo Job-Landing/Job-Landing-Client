@@ -8,6 +8,7 @@ import JobListTable from './JobListTable'
 import AddJobForm from './AddJobForm'
 import JobStreaming from './JobStreaming'
 import HomeNavbar from './HomeNavbar'
+import DashboardChart from './DashboardChart'
 
 export {
   Sidebar,
@@ -19,5 +20,6 @@ export {
   JobListTable,
   AddJobForm,
   JobStreaming,
-  HomeNavbar
+  HomeNavbar,
+  DashboardChart
 }

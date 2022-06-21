@@ -1,17 +1,18 @@
 import React from 'react';
 import styled from 'styled-components'
 import { Link } from 'react-router-dom'
-import { Sidebar, Navbar, Statistic, DashboardTable } from '../components'
+import { Sidebar, Navbar, Statistic, DashboardTable, DashboardChart } from '../components'
 
 const Dashboard = () => {
     return (
         <Wrapper>
-            <Sidebar />
-            <div className="right">
-                <Navbar />
-                <Statistic />
-                <DashboardTable />
-            </div>
+          <Sidebar />
+          <div className="right">
+            <Navbar />
+            <Statistic />
+            <DashboardChart />
+            <DashboardTable />
+          </div>
         </Wrapper>
     );
 }

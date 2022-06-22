@@ -6,9 +6,11 @@ import WorkRoundedIcon from '@mui/icons-material/WorkRounded';
 import PersonRoundedIcon from '@mui/icons-material/PersonRounded';
 import Wrapper from '../asserts/wrappers/Sidebar'
 import StreamIcon from '@mui/icons-material/Stream';
+import {JobLandingContext} from '../context/context';
 
 
 const Sidebar = () => {
+  const {user} = React.useContext(JobLandingContext);
   const path = window.location.pathname.replace("/", "")
   const [pathname, setPathname] = useState(path);
 
@@ -16,42 +18,42 @@ const Sidebar = () => {
       <Wrapper>
         <div className='profile'>
           <img src={avatar} alt="avatar"/>
-        <div className='profile_info'>
-          <span>Zanyuan Yang</span>
-          <span>user</span>
+          <div className='profile_info'>
+            <span>{user.username}</span>
+            <span>user</span>
+          </div>
         </div>
-      </div>
-      <div>
-        <h2 className='title'>GENERAL</h2>
-        <div className='general-item'>
-          <Link to='/dashboard' className={path==='dashboard' ? 'item' :  'item out-active'}>
-            <DashboardRoundedIcon className='icon' />
-            <p>Dashboard</p>
-          </Link>
-          <Link to='/profile' className={path==='profile' ? 'item' :  'item out-active'}>
-            <PersonRoundedIcon className='icon' />
-            <p>Profile</p>
-          </Link>
+        <div>
+          <h2 className='title'>GENERAL</h2>
+          <div className='general-item'>
+            <Link to='/dashboard' className={path === 'dashboard' ? 'item' : 'item out-active'}>
+              <DashboardRoundedIcon className='icon'/>
+              <p>Dashboard</p>
+            </Link>
+            <Link to='/profile' className={path === 'profile' ? 'item' : 'item out-active'}>
+              <PersonRoundedIcon className='icon'/>
+              <p>Profile</p>
+            </Link>
+          </div>
         </div>
-      </div>
-      <div>
-        <h2 className='title'>Management</h2>
-        <div className='general-item '>
-          <Link to='/joblist' className={path === 'joblist' ? 'item' : 'item out-active'}>
-            <DashboardRoundedIcon className='icon'/>
-            <p>All Jobs</p>
-          </Link>
-          <Link to='/addjob' className={path === 'addjob' ? 'item' : 'item out-active'}>
-            <WorkRoundedIcon className='icon'/>
-            <p>Add Job</p>
-          </Link>
-          <Link to='/jobstreaming' className={path === 'jobstreaming' ? 'item' : 'item out-active'}>
-            <StreamIcon className='icon'/>
-            <p>Job Streaming</p>
-          </Link>
+        <div>
+          <h2 className='title'>Management</h2>
+          <div className='general-item '>
+            <Link to='/joblist' className={path === 'joblist' ? 'item' : 'item out-active'}>
+              <DashboardRoundedIcon className='icon'/>
+              <p>All Jobs</p>
+            </Link>
+            <Link to='/addjob' className={path === 'addjob' ? 'item' : 'item out-active'}>
+              <WorkRoundedIcon className='icon'/>
+              <p>Add Job</p>
+            </Link>
+            <Link to='/jobstreaming' className={path === 'jobstreaming' ? 'item' : 'item out-active'}>
+              <StreamIcon className='icon'/>
+              <p>Job Streaming</p>
+            </Link>
+          </div>
         </div>
-      </div>
-    </Wrapper>
+      </Wrapper>
   );
 }
 

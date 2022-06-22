@@ -15,7 +15,7 @@ const Wrapper = styled.section`
 
   .form_row1 {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
     column-gap: 50px;
     padding: 0 40px 20px 20px;
   }

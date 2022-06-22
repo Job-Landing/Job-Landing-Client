@@ -14,6 +14,7 @@ Teams:
     - [X] Add relavent pictures
 - [ ] Link the Back-end Data to DashBoard < *Maple* >
 - [X] Add Profile Editing Page
+- [ ] push to heroku
 
 
 Branch Status:

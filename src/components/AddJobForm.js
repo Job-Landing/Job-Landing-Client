@@ -16,10 +16,10 @@ const initialState = {
     type: '',
     status: '',
     applyUrl: '',
-    createdBy: 'test@test.com'
+    createdBy: ''
 }
 
-async function submitJobForm(email, job) {
+async function submitJobForm(id, job) {
     const {company, position, location, type, status, applyUrl} = job;
     const newJob = {
         company: company,
@@ -28,7 +28,7 @@ async function submitJobForm(email, job) {
         type: type,
         status: status,
         applyUrl: applyUrl,
-        createdBy: email
+        createdBy: id
     };
 
     return fetch(`${BASE_URL}/job`, {
@@ -51,7 +51,7 @@ const AddJobForm = () => {
 
     const submitJob = (e) => {
         console.log(`job at ${job.company} submitted!`);
-        const response = submitJobForm("test@test.com", job);
+        const response = submitJobForm("62b39778f055ba465b4596fb", job);
     }
     const clearJob = (e) => {
 

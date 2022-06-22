@@ -151,6 +151,22 @@ const Wrapper = styled.main`
     background-size: 200% auto;
     border-radius: 10px;
   }
+  .submitLoading {
+    width: 380px;
+    border: none;
+    color: white;
+    font-size: 15px;
+    font-weight: bold;
+    cursor: pointer;
+    background: rgb(145, 158, 171);
+    box-shadow:rgb(135 135 135 / 24%) 0px 8px 16px 0px;;
+    padding: 15px;
+    text-align: center;
+    text-transform: uppercase;
+    transition: 0.5s;
+    background-size: 200% auto;
+    border-radius: 10px;
+  }
   .submit:hover {
     color: #fff;
     text-decoration: none;
@@ -158,7 +174,7 @@ const Wrapper = styled.main`
     box-shadow:none;
   }
   .seen {
-    color: rgb(145, 158, 171);;
+    color: rgb(145, 158, 171);
     position: relative;
     left: 340px;
     bottom: 56px;
@@ -178,11 +194,66 @@ const Wrapper = styled.main`
     text-decoration: underline;
   }
   .seen:hover {
-    /* color: #626262; */
     background-color: #21262d;
     border-radius: 50%;
-
   }
+
+  /* loading */
+  .lds-ellipsis {
+    display: inline-block;
+    position: relative;
+    margin-right: 70px;
+  }
+  .lds-ellipsis div {
+    position: absolute;
+    top: -10px;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: #fff;
+    animation-timing-function: cubic-bezier(0, 1, 1, 0);
+  }
+  .lds-ellipsis div:nth-child(1) {
+    left: 8px;
+    animation: lds-ellipsis1 0.6s infinite;
+  }
+  .lds-ellipsis div:nth-child(2) {
+    left: 8px;
+    animation: lds-ellipsis2 0.6s infinite;
+  }
+  .lds-ellipsis div:nth-child(3) {
+    left: 32px;
+    animation: lds-ellipsis2 0.6s infinite;
+  }
+  .lds-ellipsis div:nth-child(4) {
+    left: 56px;
+    animation: lds-ellipsis3 0.6s infinite;
+  }
+  @keyframes lds-ellipsis1 {
+    0% {
+      transform: scale(0);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+  @keyframes lds-ellipsis3 {
+    0% {
+      transform: scale(1);
+    }
+    100% {
+      transform: scale(0);
+    }
+  }
+  @keyframes lds-ellipsis2 {
+    0% {
+      transform: translate(0, 0);
+    }
+    100% {
+      transform: translate(24px, 0);
+    }
+  }
+
 
 
   @media only screen and (max-width: 800px) {

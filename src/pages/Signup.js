@@ -1,11 +1,13 @@
-import React, {useState} from 'react'
-import logo from '../asserts/images/logo.png'
+import React, {useState, useEffect} from 'react'
 import VisibilityIcon from '@mui/icons-material/Visibility';
 import VisibilityOffIcon from '@mui/icons-material/VisibilityOff';
 import {Link} from "react-router-dom";
 import Wrapper from "../asserts/wrappers/SignUpAndLogIn";
 import { HomeNavbar } from '../components'
 import register from '../asserts/images/register.png'
+import { BASE_URL } from '../utils/constant'
+import axios from 'axios';
+import {JobLandingContext} from '../context/context';
 
 const initialState = {
   name: '',
@@ -20,8 +22,10 @@ const initialState = {
 // }
 
 const Signup = (() => {
+  const { login } = React.useContext(JobLandingContext);
   const [values, setValues] = useState(initialState);
   const [showPassword, setShowPassword] = useState(false);
+  const [loading, setLoading] = useState(false);
   // const [passwordValidate, setPasswordValidate] = useState(validateState);
 
   const handleChange = (e) => {
@@ -32,29 +36,51 @@ const Signup = (() => {
     setShowPassword(!showPassword)
   };
 
+  const loginValidator = async (email, password) => {
+    const user = {email: email, password: password}
+    const response = await axios.post(`${BASE_URL}/user/signin`, user)
+    login(response.data);
+  }
+
   // const handleMouseDownPassword = (e) => {
   //   e.preventDefault();
   // };
 
   const handleSubmit = async (e) => {
+    console.log(values)
     e.preventDefault();
+    setLoading(true)
     const {name, email, password} = values;
     if (!email || !password || !name) {
       console.log("can not be empty!");
       return;
     }
-    const newUser = {name: name, email: email, password: password};
-    await fetch("http://localhost:3001/user/signup", {
+
+    const newUser = {username: name, email: email, password: password};
+    await fetch(`${BASE_URL}/user/signup`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
       },
       body: JSON.stringify(newUser),
     })
-        .catch(error => {
-          window.alert(error);
-          return;
-        });
+      .then(res => {
+        if (res.status >= 400) {
+          setLoading(false);
+          throw new Error("Server responds with error!");
+        }
+      })
+      .then(() => {
+        setTimeout(() => {
+          setLoading(false);
+          loginValidator(email, password)
+        }, 2000);
+
+      })
+      .catch(error => {
+        window.alert(error);
+        return;
+      });
   };
 
   return (
@@ -75,40 +101,17 @@ const Signup = (() => {
             <p className='form_title1'>Free forever. No credit card needed.</p>
             <form onSubmit={handleSubmit}>
               <input autoComplete="off" type="email" name="email" value={values.email} placeholder='E-mail'
-                    onChange={handleChange}/>
+                    onChange={handleChange} required />
               <input autoComplete="off" type="text" name="name" value={values.name} placeholder='Username'
-                    onChange={handleChange}/>
+                    onChange={handleChange} required />
               <input autoComplete="off" type={!showPassword ? "password" : "text"} name="password" value={values.password}
                     placeholder='Password'
-                    onChange={handleChange}/>
+                    onChange={handleChange} required />
               {!showPassword ? <VisibilityOffIcon onClick={handleClickShowPassword} className='seen'/> :
                   <VisibilityIcon onClick={handleClickShowPassword} className='seen'/>}
-
-              {/*<p>Forgot your password?</p>*/}
-              {/* <div className="password_validate">
-              <p className="password_text">Password must contain</p>
-              <br />
-                <div className="validate_wrapper">
-                  <div className="validate_item">
-                    <div className={passwordValidate.character ? 'bullet_green' : 'bullet_red'}></div>
-                    <p className="validate_msg">8 - 20 characters</p>
-                  </div>
-                  <div className="validate_item">
-                    <div className={passwordValidate.number ? 'bullet_green' : 'bullet_red'}></div>
-                    <p className="validate_msg">1 or more numbers</p>
-                  </div>
-                  <div className="validate_item">
-                    <div className={passwordValidate.uppercase ? 'bullet_green' : 'bullet_red'}></div>
-                    <p className="validate_msg">upper-case letter</p>
-                  </div>
-                  <div className="validate_item">
-                    <div className={passwordValidate.lowercase ? 'bullet_green' : 'bullet_red'}></div>
-                    <p className="validate_msg">lower-case letter</p>
-                  </div>
-                </div>
-              </div> */}
-              <button className='submit'>Sign Up</button>
+              <button className={!loading ? 'submit' : 'submitLoading'}>{ !loading ? 'Sign Up' : <div class="lds-ellipsis"><div></div><div></div><div></div><div></div></div> }</button>
             </form>
+
           </div>
         </div>
       </main>

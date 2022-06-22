@@ -7,52 +7,59 @@ import Select from '@mui/material/Select';
 import DatePicker from 'react-date-picker';
 import Button from '@mui/material/Button';
 import Wrapper from '../asserts/wrappers/AddJobForm'
+import {BASE_URL} from '../utils/constant'
 
-// async function submitJobForm(email, name) {
-//     return fetch('URL', {
-//         method: 'POST',
-//         headers: {
-//             'Content-Type': 'application/json'
-//         },
-//         body: JSON.stringify({
-//             email: email,
-//             name: name
-//         })
-//     })
-//     .then(data => data.json())
-// }
+const initialState = {
+    company: '',
+    position: '',
+    location: '',
+    type: '',
+    status: '',
+    applyUrl: '',
+    createdBy: 'test@test.com'
+}
+
+async function submitJobForm(email, job) {
+    const {company, position, location, type, status, applyUrl} = job;
+    const newJob = {
+        company: company,
+        position: position,
+        location: location,
+        type: type,
+        status: status,
+        applyUrl: applyUrl,
+        createdBy: email
+    };
+
+    return fetch(`${BASE_URL}/job`, {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(newJob)
+    })
+        .then(data => data.json())
+        .catch(error => {
+            window.alert(error);
+            return;
+        });
+}
 
 const AddJobForm = () => {
-    const [position, setPosition] = useState('');
-    const [company, setCompany] = useState('');
-    const [location, setLocation] = useState('');
-
-    const [status, setStatus] = useState('');
-    const [type, setType] = useState('');
+    const [job, setValues] = useState(initialState);
     const [date, setDate] = useState(new Date());
 
     const submitJob = (e) => {
-
+        console.log(`job at ${job.company} submitted!`);
+        const response = submitJobForm("test@test.com", job);
     }
     const clearJob = (e) => {
 
     }
     // get form value
-    const onChangePassword = (e) => {
-        setPosition(e.target.value)
+    const handleChange = (e) => {
+        setValues({...job, [e.target.name]: e.target.value})
     }
-    const onChangeCompany = (e) => {
-        setCompany(e.target.value)
-    }
-    const onChangeLocation = (e) => {
-        setLocation(e.target.value)
-    }
-    const handleChangeStatus = (e) => {
-        setStatus(e.target.value);
-    };
-    const handleTypeChange = (e) => {
-        setType(e.target.value);
-    };
 
     return (
         <Wrapper>
@@ -61,18 +68,25 @@ const AddJobForm = () => {
                     <div className="form_row1">
                         <div>
                             <label htmlFor="position" className="label">Position</label> <br/>
-                            <input className="input" type="text" name="position" onChange={onChangePassword}
-                                   value={position}/>
+                            <input className="input" type="text" name="position" onChange={handleChange}
+                                   value={job.position}/>
                         </div>
                         <div>
                             <label htmlFor="company" className="label">Company</label> <br/>
-                            <input className="input" type="text" name="Company" onChange={onChangeCompany}
-                                   value={company}/>
+                            <input className="input" type="text" name="company" onChange={handleChange}
+                                   value={job.company}/>
                         </div>
+                    </div>
+                    <div className="form_row1">
                         <div>
                             <label htmlFor="location" className="label">Location</label> <br/>
-                            <input className="input" type="text" name="location" onChange={onChangeLocation}
-                                   value={location}/>
+                            <input className="input" type="text" name="location" onChange={handleChange}
+                                   value={job.location}/>
+                        </div>
+                        <div>
+                            <label htmlFor="location" className="label">Job Page Url</label> <br/>
+                            <input className="input" type="text" name="applyUrl" onChange={handleChange}
+                                   value={job.applyUrl}/>
                         </div>
                     </div>
 
@@ -84,9 +98,10 @@ const AddJobForm = () => {
                                     <Select
                                         labelId="demo-simple-select-label"
                                         id="demo-simple-select1"
-                                        value={status}
+                                        name="status"
+                                        value={job.status}
                                         label="Status"
-                                        onChange={handleChangeStatus}
+                                        onChange={handleChange}
                                     >
                                         <MenuItem value='pending'>Pending</MenuItem>
                                         <MenuItem value='interview'>Interview</MenuItem>
@@ -103,9 +118,10 @@ const AddJobForm = () => {
                                     <Select
                                         labelId="type-label"
                                         id="demo-simple-select2"
-                                        value={type}
+                                        name="type"
+                                        value={job.type}
                                         label="Type"
-                                        onChange={handleTypeChange}
+                                        onChange={handleChange}
                                     >
                                         <MenuItem value='full-time'>Full Time</MenuItem>
                                         <MenuItem value='part-time'>Part Time</MenuItem>
@@ -116,7 +132,7 @@ const AddJobForm = () => {
                             </Box>
                         </div>
                         <div>
-                            <DatePicker onChange={setDate} value={date} className='date_picker'/>
+                            <DatePicker name="date" onChange={setDate} value={date} className='date_picker'/>
                         </div>
                     </div>
                     <div className='btn'>

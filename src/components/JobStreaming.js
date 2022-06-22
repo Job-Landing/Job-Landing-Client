@@ -56,27 +56,27 @@ const JobStreaming = () => {
                         })
                     }
 
-                    <tr>
-                        <td>Software Engineer Intern</td>
-                        <td>Google</td>
-                        <td>https://www.google.com/</td>
-                        <td>May 23, 2022</td>
-                        <td><span className='interview'>interview</span></td>
-                    </tr>
-                    <tr>
-                        <td>Software Engineer Intern</td>
-                        <td>Google</td>
-                        <td>https://www.google.com/</td>
-                        <td>May 23, 2022</td>
-                        <td><span className='offer'>offer</span></td>
-                    </tr>
-                    <tr>
-                        <td>Software Engineer Intern</td>
-                        <td>Google</td>
-                        <td>https://www.google.com/</td>
-                        <td>May 23, 2022</td>
-                        <td><span className='decline'>decline</span></td>
-                    </tr>
+                    {/*<tr>*/}
+                    {/*    <td>Software Engineer Intern</td>*/}
+                    {/*    <td>Google</td>*/}
+                    {/*    <td>https://www.google.com/</td>*/}
+                    {/*    <td>May 23, 2022</td>*/}
+                    {/*    <td><span className='interview'>interview</span></td>*/}
+                    {/*</tr>*/}
+                    {/*<tr>*/}
+                    {/*    <td>Software Engineer Intern</td>*/}
+                    {/*    <td>Google</td>*/}
+                    {/*    <td>https://www.google.com/</td>*/}
+                    {/*    <td>May 23, 2022</td>*/}
+                    {/*    <td><span className='offer'>offer</span></td>*/}
+                    {/*</tr>*/}
+                    {/*<tr>*/}
+                    {/*    <td>Software Engineer Intern</td>*/}
+                    {/*    <td>Google</td>*/}
+                    {/*    <td>https://www.google.com/</td>*/}
+                    {/*    <td>May 23, 2022</td>*/}
+                    {/*    <td><span className='decline'>decline</span></td>*/}
+                    {/*</tr>*/}
                     </tbody>
                 </table>
             </div>

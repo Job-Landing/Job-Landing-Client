@@ -6,11 +6,9 @@ import WorkRoundedIcon from '@mui/icons-material/WorkRounded';
 import PersonRoundedIcon from '@mui/icons-material/PersonRounded';
 import Wrapper from '../asserts/wrappers/Sidebar'
 import StreamIcon from '@mui/icons-material/Stream';
-import {JobLandingContext} from '../context/context';
 
 
 const Sidebar = () => {
-  const {user} = React.useContext(JobLandingContext);
   const path = window.location.pathname.replace("/", "")
   const [pathname, setPathname] = useState(path);
 
@@ -19,7 +17,7 @@ const Sidebar = () => {
         <div className='profile'>
           <img src={avatar} alt="avatar"/>
           <div className='profile_info'>
-            <span>{user.username}</span>
+            <span>Zanyuan Yang</span>
             <span>user</span>
           </div>
         </div>

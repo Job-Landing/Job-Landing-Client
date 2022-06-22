@@ -34,12 +34,12 @@ const JobStreaming = () => {
                         <th>Create Time</th>
                         <th className='last_column'>Status</th>
                     </tr>
-                    {path === 'jobstream' ?
+                    {path === 'jobstreaming' ?
                         streamItem.map((item) => {
                             return <tr key={item._id}>
                                 <td>{item.position}</td>
                                 <td>{item.company}</td>
-                                <td>{item.applyUrl}</td>
+                                <td><a href={item.applyUrl}>{item.applyUrl}</a></td>
                                 <td>May 23, 2022</td>
                                 <td><span className='pending'>pending</span></td>
                             </tr>

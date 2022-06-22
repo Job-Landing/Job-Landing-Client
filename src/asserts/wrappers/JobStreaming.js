@@ -115,6 +115,10 @@ const Wrapper = styled.section`
     color: white;
   }
 
+  a {
+    color: antiquewhite;
+  }
+
 
   .alert {
     width: 200px;

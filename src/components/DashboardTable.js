@@ -10,10 +10,11 @@ const DashboardTable = () => {
     const [dashboardItem, setDashboardItem] = useState([]);
 
     const getDashboardItemList = async () => {
-        const response = await axios(`${BASE_URL}/job`);
+        const response = await axios(`${BASE_URL}/job/62b39778f055ba465b4596fb`)
         if (response.status === 200) {
             setDashboardItem(response.data)
             console.log(response.data)
+            // console.log(streamItem)
         }
     }
 
@@ -30,21 +31,23 @@ const DashboardTable = () => {
                         <table className='information_table'>
                             <tbody>
 
-                                <tr className='tr'>
-                                    <th>Position</th>
-                                    <th>Company</th>
-                                    <th>Date / Time</th>
-                                    <th>Status</th>
-                                    <th className='last_column'>Action</th>
-                                </tr>
-                                {/*TODO: link DB*/}
-                                <tr>
-                                    <td>Software Engineer Intern</td>
-                                    <td>Google</td>
+                            <tr className='tr'>
+                                <th>Position</th>
+                                <th>Company</th>
+                                <th>Date / Time</th>
+                                <th>Status</th>
+                                <th className='last_column'>Action</th>
+                            </tr>
+                            {/*TODO: link DB*/}
+                            {dashboardItem.map((item) => {
+                                return <tr key={item._id}>
+                                    <td>{item.position}</td>
+                                    <td>{item.company}</td>
                                     <td>May 23, 2022</td>
-                                    <td><span className='pending'>pending</span></td>
+                                    <td><span className={item.status}>{item.status}</span></td>
                                     <td>Detail</td>
                                 </tr>
+                            })}
                             </tbody>
                         </table>
                         <a href="/joblist"><Button className='view_all' variant="text">View

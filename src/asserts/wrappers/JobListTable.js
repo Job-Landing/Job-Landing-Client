@@ -117,6 +117,15 @@ const Wrapper = styled.section`
     .no_underline{
         text-decoration: none;
     }
+    .pagination{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    li button, li div{
+        color: white;
+    }
 
 `
 

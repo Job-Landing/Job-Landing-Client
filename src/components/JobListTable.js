@@ -8,9 +8,14 @@ import axios from 'axios';
 import { BASE_URL } from '../utils/constant'
 import { JobLandingContext } from '../context/context';
 import Button from '@mui/material/Button';
+import Pagination from '@mui/material/Pagination';
 
 const JobListTable = () => {
     const { user } = React.useContext(JobLandingContext);
+    const [currPage, setCurrPage] = useState(1);
+    const [totalPage, setTotalPage] = useState(1);
+    const [firstSlice, setFirstSlice] = useState(0);
+    const [lastSlice, setLastSlice] = useState(10);
     const [jobList, setJobList] = useState([]);
     const [deleteItem, setDeleteItem] = useState('none');
     const alertFadeIn = ()=>{
@@ -20,10 +25,29 @@ const JobListTable = () => {
         }, 2000);
     }
 
+    const handlePageChange = (e) => {
+        var curPage = parseInt(e.target.innerText, 10)
+        setCurrPage(curPage);
+        if (curPage === 1) {
+            setFirstSlice(0);
+            setLastSlice(10);
+        } else {
+            setFirstSlice((curPage - 1) * 10);
+            setLastSlice((curPage)*10);
+        }
+
+    };
+
     const getJobList = async () => {
         const response = await axios(`${BASE_URL}/job/${user._id}`)
         // console.log(response.data)
         setJobList(response.data)
+        if ((response.data.length / 10) % 1 === 0) {
+            setTotalPage(parseInt(response.data.length/10))
+        }else {
+            setTotalPage(parseInt(response.data.length/10 + 1))
+        }
+
     }
 
     const deleteJob = async (job_id) => {
@@ -35,7 +59,7 @@ const JobListTable = () => {
 
     useEffect(() => {
         getJobList()
-    },[deleteJob])
+    },[deleteItem])
 
 
     return (
@@ -54,7 +78,7 @@ const JobListTable = () => {
                             <th>Delete</th>
                             <th className='last_column'>Update</th>
                         </tr>
-                        {jobList.map((job, index) => {
+                        {jobList.slice(firstSlice, lastSlice).map((job, index) => {
                             return <tr key={index}>
                                 <td>{job.position}</td>
                                 <td>{job.company}</td>
@@ -76,7 +100,9 @@ const JobListTable = () => {
                         })}
                     </tbody>
                 </table>
+                <Pagination className="pagination" count={totalPage} color="primary" page={currPage} onChange={handlePageChange} />
             </div>
+
              <Alert className={deleteItem ==='success' ? 'alert animate__animated animate__fadeInRight' : deleteItem ==='none' ? 'none': 'alert animate__animated  animate__fadeOutRight'} severity="error"><strong>Delete success!</strong></Alert>
         </Wrapper>
     );

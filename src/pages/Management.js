@@ -21,6 +21,7 @@ const Management = () => {
 const Wrapper = styled.section`
   display: flex;
   height: 100vh;
+  margin-bottom: 30px;
   .right{
     width: 100vw;
     padding: 20px 40px 20px 40px;

@@ -2,12 +2,12 @@ import styled from "styled-components";
 
 const Wrapper = styled.section`
     padding-top: 20px;
-
     /* Table */
     .inner_table{
         background-color: rgba(50, 50, 64, 0.79);
         border-radius: 15px;
         padding: 0 15px 15px 15px;
+
     }
     h2{
         margin: 0;
@@ -41,19 +41,22 @@ const Wrapper = styled.section`
         padding: 8px 5px 8px 15px;
     }
     tr td:nth-child(1){
-        width: 30%;
-    }
-    tr td:nth-child(2),tr td:nth-child(3){
         width: 20%;
     }
-    tr td:nth-child(4),tr td:nth-child(5), tr td:nth-child(6){
+    tr td:nth-child(2){
         width: 20%;
     }
-    tr td:nth-child(2),tr td:nth-child(3),tr td:nth-child(4),tr td:nth-child(5),tr td:nth-child(6){
+    tr td:nth-child(3), tr td:nth-child(4),tr td:nth-child(5){
+        width: 15%;
+    }
+    tr td:nth-child(6), tr td:nth-child(7), tr td:nth-child(8){
+        width: 8%;
+    }
+    tr td:nth-child(2),tr td:nth-child(3),tr td:nth-child(4),tr td:nth-child(5),tr td:nth-child(6), tr td:nth-child(7), tr td:nth-child(8){
         text-align: center;
         justify-content: center;
     }
-    tr td:nth-child(6){
+    tr td:nth-child(8){
         padding-right: 15px;
     }
     .view_all{
@@ -110,6 +113,9 @@ const Wrapper = styled.section`
 
     .none{
         display: none;
+    }
+    .no_underline{
+        text-decoration: none;
     }
 
 `

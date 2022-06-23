@@ -1,4 +1,4 @@
-import React,{useState} from 'react'
+import React,{useState, useEffect} from 'react'
 import IconButton from '@mui/material/IconButton';
 import DeleteIcon from '@mui/icons-material/Delete';
 import Fingerprint from '@mui/icons-material/Fingerprint';
@@ -6,8 +6,12 @@ import Alert from '@mui/material/Alert';
 import Wrapper from '../asserts/wrappers/JobListTable'
 import axios from 'axios';
 import { BASE_URL } from '../utils/constant'
+import { JobLandingContext } from '../context/context';
+import Button from '@mui/material/Button';
 
 const JobListTable = () => {
+    const { user } = React.useContext(JobLandingContext);
+    const [jobList, setJobList] = useState([]);
     const [deleteItem, setDeleteItem] = useState('none');
     const alertFadeIn = ()=>{
         setDeleteItem('success')
@@ -17,8 +21,21 @@ const JobListTable = () => {
     }
 
     const getJobList = async () => {
-        const response = await axios(`${BASE_URL}/job`)
+        const response = await axios(`${BASE_URL}/job/${user._id}`)
+        // console.log(response.data)
+        setJobList(response.data)
     }
+
+    const deleteJob = async (job_id) => {
+        const response = await axios.delete(`${BASE_URL}/job/${user._id}/${job_id}`)
+        if (response) {
+            alertFadeIn();
+        }
+    }
+
+    useEffect(() => {
+        getJobList()
+    },[deleteJob])
 
 
     return (
@@ -30,75 +47,33 @@ const JobListTable = () => {
                         <tr className='tr'>
                             <th>Position</th>
                             <th>Company</th>
+                            <th>Type</th>
                             <th>Date / Time</th>
                             <th>Status</th>
+                            <th>Link</th>
                             <th>Delete</th>
                             <th className='last_column'>Update</th>
                         </tr>
-                        <tr>
-                            <td>Software Engineer Intern</td>
-                            <td>Google</td>
-                            <td>May 23, 2022</td>
-                            <td><span className='pending'>pending</span></td>
-                            <td>
-                                <IconButton aria-label="delete" size="large" className='delete_icon'>
-                                    <DeleteIcon fontSize="small" onClick={alertFadeIn} />
-                                </IconButton>
-                            </td>
-                            <td>
-                                <IconButton aria-label="fingerprint" color="success">
-                                    <Fingerprint />
-                                </IconButton>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>Software Engineer Intern</td>
-                            <td>Google</td>
-                            <td>May 23, 2022</td>
-                            <td><span className='interview'>interview</span></td>
-                            <td>
-                                <IconButton aria-label="delete" size="large" className='delete_icon'>
-                                    <DeleteIcon fontSize="small" onClick={alertFadeIn} />
-                                </IconButton>
-                            </td>
-                            <td>
-                                <IconButton aria-label="fingerprint" color="success">
-                                    <Fingerprint />
-                                </IconButton>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>Software Engineer Intern</td>
-                            <td>Google</td>
-                            <td>May 23, 2022</td>
-                            <td><span className='offer'>offer</span></td>
-                            <td>
-                                <IconButton aria-label="delete" size="large" className='delete_icon'>
-                                    <DeleteIcon fontSize="small"  onClick={alertFadeIn} />
-                                </IconButton>
-                            </td>
-                            <td>
-                                <IconButton aria-label="fingerprint" color="success">
-                                    <Fingerprint />
-                                </IconButton>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>Software Engineer Intern</td>
-                            <td>Google</td>
-                            <td>May 23, 2022</td>
-                            <td><span className='decline'>decline</span></td>
-                            <td>
-                                <IconButton aria-label="delete" size="large" className='delete_icon'>
-                                    <DeleteIcon fontSize="small" onClick={alertFadeIn} />
-                                </IconButton>
-                            </td>
-                            <td>
-                                <IconButton aria-label="fingerprint" color="success">
-                                    <Fingerprint />
-                                </IconButton>
-                            </td>
-                        </tr>
+                        {jobList.map((job, index) => {
+                            return <tr key={index}>
+                                <td>{job.position}</td>
+                                <td>{job.company}</td>
+                                <td>{job.type}</td>
+                                <td>{job.createAt}</td>
+                                <td><span className={job.status === 'pending' ? 'pending' : job.status === 'interview' ? 'interview' : job.status === 'offer' ? 'offer' : 'decline'}>{job.status}</span></td>
+                                <td><a className='no_underline' target="_blank" href={job.applyUrl} rel="noreferrer"><Button variant="text">Link</Button></a></td>
+                                <td>
+                                    <IconButton aria-label="delete" size="large" className='delete_icon'>
+                                        <DeleteIcon fontSize="small" onClick={()=>deleteJob(job._id)} />
+                                    </IconButton>
+                                </td>
+                                <td>
+                                    <IconButton aria-label="fingerprint" color="success">
+                                        <Fingerprint />
+                                    </IconButton>
+                                </td>
+                            </tr>
+                        })}
                     </tbody>
                 </table>
             </div>

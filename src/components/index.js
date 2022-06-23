@@ -21,5 +21,5 @@ export {
   AddJobForm,
   JobStreaming,
   HomeNavbar,
-  DashboardChart
+  DashboardChart,
 }

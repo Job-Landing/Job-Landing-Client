@@ -1,4 +1,5 @@
-import React,{useState, useEffect} from 'react'
+import React, { useState, useEffect } from 'react'
+import {Link} from 'react-router-dom'
 import IconButton from '@mui/material/IconButton';
 import DeleteIcon from '@mui/icons-material/Delete';
 import Fingerprint from '@mui/icons-material/Fingerprint';
@@ -91,9 +92,11 @@ const JobListTable = () => {
                                     </IconButton>
                                 </td>
                                 <td>
-                                    <IconButton aria-label="fingerprint" color="success">
-                                        <Fingerprint />
-                                    </IconButton>
+                                    <Link to={"/jobupdate/" + job._id}>
+                                        <IconButton aria-label="fingerprint" color="success">
+                                            <Fingerprint />
+                                        </IconButton>
+                                    </Link>
                                 </td>
                             </tr>
                         })}

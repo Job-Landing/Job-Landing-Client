@@ -1,5 +1,6 @@
 import React,{useState, useEffect} from 'react'
 import Wrapper from '../asserts/wrappers/JobStreaming'
+import Button from '@mui/material/Button';
 import axios from 'axios';
 import { BASE_URL } from '../utils/constant'
 
@@ -13,7 +14,6 @@ const JobStreaming = () => {
         if (response.status === 200) {
             setStreamItem(response.data)
             console.log(response.data)
-            // console.log(streamItem)
         }
     }
 
@@ -30,18 +30,18 @@ const JobStreaming = () => {
                         <tr className='tr'>
                             <th>Position</th>
                             <th>Company</th>
-                            <th>Apply Url</th>
+                            <th>Type</th>
                             <th>Create Time</th>
-                            <th className='last_column'>Status</th>
+                            <th className='last_column'>Link</th>
                         </tr>
-                        {path === 'jobstream' ?
+                        {path === 'jobstreaming' ?
                             streamItem.map((item) => {
                                 return <tr key={item._id}>
                                     <td>{item.position}</td>
                                     <td>{item.company}</td>
-                                    <td>{item.applyUrl}</td>
-                                    <td>May 23, 2022</td>
-                                    <td><span className='pending'>pending</span></td>
+                                    <td>{item.type}</td>
+                                    <td>{item.createAt.substring(0,10)}</td>
+                                    <td><a className='no_underline' target="_blank" href={item.applyUrl} rel="noreferrer"><Button variant="text">Link</Button></a></td>
                                 </tr>
                             })
                         :
@@ -55,28 +55,6 @@ const JobStreaming = () => {
                                 </tr>
                             })
                         }
-
-                        <tr>
-                            <td>Software Engineer Intern</td>
-                            <td>Google</td>
-                            <td>https://www.google.com/</td>
-                            <td>May 23, 2022</td>
-                            <td><span className='interview'>interview</span></td>
-                        </tr>
-                        <tr>
-                            <td>Software Engineer Intern</td>
-                            <td>Google</td>
-                            <td>https://www.google.com/</td>
-                            <td>May 23, 2022</td>
-                            <td><span className='offer'>offer</span></td>
-                        </tr>
-                        <tr>
-                            <td>Software Engineer Intern</td>
-                            <td>Google</td>
-                            <td>https://www.google.com/</td>
-                            <td>May 23, 2022</td>
-                            <td><span className='decline'>decline</span></td>
-                        </tr>
                     </tbody>
                 </table>
             </div>

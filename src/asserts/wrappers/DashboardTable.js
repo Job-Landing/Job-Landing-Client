@@ -23,6 +23,7 @@ const Wrapper = styled.section`
     .information_table{
         padding: 20px;
         margin-top: 20px;
+        width: 100%;
     }
     .tr{
         background-color: #8489ba;
@@ -41,6 +42,9 @@ const Wrapper = styled.section`
     }
     tr td:nth-child(1){
         padding: 8px 5px 8px 15px;
+    }
+    tr th:nth-child(1), tr th:nth-child(2),tr th:nth-child(3),tr th:nth-child(4),tr th:nth-child(5){
+         width: 20%;
     }
     tr td:nth-child(1), tr td:nth-child(2),tr td:nth-child(3),tr td:nth-child(4),tr td:nth-child(5){
          width: 20%;

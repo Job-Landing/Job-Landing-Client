@@ -87,6 +87,10 @@ const Wrapper = styled.section`
   .none{
       display: none;
   }
+
+  .MuiTextField-root{
+    background-color: white;
+  }
 `
 
 export default Wrapper;

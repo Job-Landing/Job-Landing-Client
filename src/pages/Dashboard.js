@@ -72,7 +72,7 @@ const Dashboard = () => {
           <Navbar />
           <Statistic jobStatus={jobStatus} />
           <DashboardChart jobStatus={jobStatus} jobList={jobList} date={date} />
-          <DashboardTable />
+          <DashboardTable jobList={jobList} />
         </div>
       </Wrapper>
   );

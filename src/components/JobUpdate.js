@@ -1,4 +1,5 @@
-import React, {useState, useEffect} from 'react'
+import React, { useState, useEffect } from 'react'
+import { useParams } from "react-router-dom";
 import Box from '@mui/material/Box';
 import InputLabel from '@mui/material/InputLabel';
 import MenuItem from '@mui/material/MenuItem';
@@ -14,7 +15,11 @@ import axios from "axios"
 import { JobLandingContext } from '../context/context';
 import Alert from '@mui/material/Alert';
 
-const AddJobForm = () => {
+const JobUpdate = () => {
+    let { jobId } = useParams();
+    const [initialState, setInitialState] =useState({});
+    const [singleItem, setSingleItem] = useState({});
+
     const [updateStatus, setUpdateStatus] = useState('none');
     const alertFadeIn = ()=>{
         setUpdateStatus('success')
@@ -24,20 +29,12 @@ const AddJobForm = () => {
     }
     const { user } = React.useContext(JobLandingContext);
     const [date, setDate] = useState(new Date());
-    const initialState = {
-        company: '',
-        position: '',
-        location: '',
-        type: 'full-time',
-        status: 'pending',
-        applyUrl: '',
-        comment: ''
-    }
-    const [job, setValues] = useState(initialState);
+
 
     async function submitJobForm(e) {
         e.preventDefault();
-        const {company, position, location, type, status, applyUrl, comment} = job;
+        const { company, position, location, type, status, applyUrl, comment } = singleItem;
+        console.log("newJob: ",singleItem);
         const newJob = {
             company: company,
             position: position,
@@ -50,25 +47,34 @@ const AddJobForm = () => {
         };
         console.log(newJob)
 
-        const response = await axios.post(`${BASE_URL}/job/${user._id}`, newJob)
+        const response = await axios.put(`${BASE_URL}/job/${user._id}/${jobId}`, newJob)
         if (response) {
             alertFadeIn()
-            clearJob()
         }
-            // .catch(error => {
-            //     this.setState({ errorMessage: error.message });
-            //     console.error('There was an error!', error);
-            // });
-
     }
 
-    const clearJob = (e) => {
-        setValues(initialState)
+    const recoverJob = (e) => {
+        setSingleItem(initialState)
     }
     // get form value
     const handleChange = (e) => {
-        setValues({ ...job, [e.target.name]: e.target.value })
+        setSingleItem({ ...singleItem, [e.target.name]: e.target.value })
     }
+
+    const getSingleItem = async () => {
+        const response = await axios(`${BASE_URL}/job/${user._id}`)
+        for (var i = 0; i < response.data.length; i++) {
+            if (response.data[i]._id === jobId) {
+                setInitialState(response.data[i])
+                setSingleItem(response.data[i])
+                console.log(response.data[i])
+            }
+        }
+    }
+
+    useEffect(() => {
+        getSingleItem()
+    }, [])
 
     return (
         <Wrapper>
@@ -78,24 +84,24 @@ const AddJobForm = () => {
                         <div>
                             <label htmlFor="position" className="label">Position</label> <br/>
                             <input className="input" type="text" name="position" onChange={handleChange}
-                                   value={job.position} required />
+                                   value={singleItem.position} required />
                         </div>
                         <div>
                             <label htmlFor="company" className="label">Company</label> <br/>
                             <input className="input" type="text" name="company" onChange={handleChange}
-                                   value={job.company} required />
+                                   value={singleItem.company} required />
                         </div>
                     </div>
                     <div className="form_row1">
                         <div>
                             <label htmlFor="location" className="label">Location</label> <br/>
                             <input className="input" type="text" name="location" onChange={handleChange}
-                                   value={job.location} required />
+                                   value={singleItem.location} required />
                         </div>
                         <div>
                             <label htmlFor="applyUrl" className="label">Job Page Url</label> <br/>
                             <input className="input" type="text" name="applyUrl" onChange={handleChange}
-                                   value={job.applyUrl} required />
+                                   value={singleItem.applyUrl} required />
                         </div>
                     </div>
                     <div className="form_row2">
@@ -107,7 +113,7 @@ const AddJobForm = () => {
                                         labelId="demo-simple-select-label"
                                         id="demo-simple-select1"
                                         name="status"
-                                        value={job.status}
+                                        value={singleItem.status+""}
                                         label="Status"
                                         onChange={handleChange}
                                     >
@@ -127,7 +133,7 @@ const AddJobForm = () => {
                                         labelId="type-label"
                                         id="demo-simple-select2"
                                         name="type"
-                                        value={job.type}
+                                        value={singleItem.type+""}
                                         label="Type"
                                         onChange={handleChange}
                                     >
@@ -149,21 +155,21 @@ const AddJobForm = () => {
                             label="Comment"
                             multiline
                             rows={3}
-                            value={job.comment}
+                            value={singleItem.comment+""}
                             name='comment'
                             onChange={handleChange}
                         />
                     </div>
                     <div className='btn'>
-                        <Button variant="contained" className='submit' type='submit'>Submit</Button>
-                        <Button variant="contained" className='clear' onClick={clearJob}>Clear</Button>
+                        <Button variant="contained" className='submit' type='submit'>Update</Button>
+                        <Button variant="contained" className='clear' onClick={recoverJob}>Recover</Button>
                     </div>
                 </form>
-                 <Alert className={updateStatus ==='success' ? 'alert animate__animated animate__fadeInRight' : updateStatus ==='none' ? 'none': 'alert animate__animated  animate__fadeOutRight'} severity="success"><strong>Add success!</strong></Alert>
+                 <Alert className={updateStatus ==='success' ? 'alert animate__animated animate__fadeInRight' : updateStatus ==='none' ? 'none': 'alert animate__animated  animate__fadeOutRight'} severity="success"><strong>Ypdate success!</strong></Alert>
             </div>
         </Wrapper>
     );
 }
 
 
-export default AddJobForm
+export default JobUpdate

@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components'
 import { Link } from 'react-router-dom'
-import { Sidebar, Navbar, InfoBox, AddJobForm, JobListTable, JobStreaming } from '../components'
+import { Sidebar, Navbar, InfoBox, AddJobForm, JobListTable, JobStreaming,JobUpdate } from '../components'
 
 const Management = () => {
     const path = window.location.pathname.replace("/", "")
@@ -11,7 +11,7 @@ const Management = () => {
             <div className="right">
                 <Navbar />
                 <InfoBox />
-                {path==='joblist' ? <JobListTable /> : path==='addjob' ? <AddJobForm /> : <JobStreaming />}
+                {path==='joblist' ? <JobListTable /> : path==='addjob' ? <AddJobForm /> : path ==='jobstreaming' ? <JobStreaming /> : <JobUpdate />}
                 {/* <AddJobForm /> */}
             </div>
         </Wrapper>

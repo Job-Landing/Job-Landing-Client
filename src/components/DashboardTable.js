@@ -1,9 +1,12 @@
-import React, {useState} from 'react';
+import React, { useState } from 'react';
+import {Link} from "react-router-dom";
 import Button from '@mui/material/Button';
 import ChevronRightRoundedIcon from '@mui/icons-material/ChevronRightRounded';
 import Wrapper from '../asserts/wrappers/DashboardTable'
 
-const DashboardTable = () => {
+
+const DashboardTable = ({jobList}) => {
+
     return (
         <Wrapper className='animate__animated animate__fadeIn'>
             <div className='table_wrapper'>
@@ -19,37 +22,18 @@ const DashboardTable = () => {
                                     <th>Status</th>
                                     <th className='last_column'>Action</th>
                                 </tr>
-                                <tr>
-                                    <td>Software Engineer Intern</td>
-                                    <td>Google</td>
-                                    <td>May 23, 2022</td>
-                                    <td><span className='pending'>pending</span></td>
-                                    <td>Detail</td>
-                                </tr>
-                                <tr>
-                                    <td>Software Engineer Intern</td>
-                                    <td>Google</td>
-                                    <td>May 23, 2022</td>
-                                    <td><span className='interview'>interview</span></td>
-                                    <td>Detail</td>
-                                </tr>
-                                <tr>
-                                    <td>Software Engineer Intern</td>
-                                    <td>Google</td>
-                                    <td>May 23, 2022</td>
-                                    <td><span className='offer'>offer</span></td>
-                                    <td>Detail</td>
-                                </tr>
-                                <tr>
-                                    <td>Software Engineer Intern</td>
-                                    <td>Google</td>
-                                    <td>May 23, 2022</td>
-                                    <td><span className='decline'>decline</span></td>
-                                    <td>Detail</td>
-                                </tr>
+                                {jobList.slice(0, 5).map((item, index) => {
+                                    return <tr key={index}>
+                                        <td>{item.position}</td>
+                                        <td>{item.company}</td>
+                                        <td>{item.createAt}</td>
+                                        <td><span className={item.status === 'pending' ? 'pending' : item.status ==='interview' ? 'interview' : item.status === 'decline' ? 'decline' : 'offer'}>{item.status}</span></td>
+                                        <td>Detail</td>
+                                    </tr>
+                                })}
                             </tbody>
                         </table>
-                        <Button className='view_all' variant="text">View All <ChevronRightRoundedIcon/> </Button>
+                        <Link to='/joblist'><Button className='view_all' variant="text">View All <ChevronRightRoundedIcon/> </Button></Link>
                     </div>
 
                     <div className='inner_table'>
@@ -61,29 +45,16 @@ const DashboardTable = () => {
                                     <th>Company</th>
                                     <th className='last_column'>Date / Time</th>
                                 </tr>
-                                <tr>
-                                    <td>Software Engineer Intern</td>
-                                    <td>Google</td>
-                                    <td>May 23, 2022</td>
-                                </tr>
-                                <tr>
-                                    <td>Software Engineer Intern</td>
-                                    <td>Google</td>
-                                    <td>May 23, 2022</td>
-                                </tr>
-                                <tr>
-                                    <td>Software Engineer Intern</td>
-                                    <td>Google</td>
-                                    <td>May 23, 2022</td>
-                                </tr>
-                                <tr>
-                                    <td>Software Engineer Intern</td>
-                                    <td>Google</td>
-                                    <td>May 23, 2022</td>
-                                </tr>
+                                {jobList.filter((item1 => item1.status === 'interview')).map((item, index) => {
+                                    return <tr key={index}>
+                                        <td>{item.position}</td>
+                                        <td>{item.company}</td>
+                                        <td>{item.createAt}</td>
+                                    </tr>
+                                })}
                             </tbody>
                         </table>
-                        <Button className='view_all' variant="text">View All <ChevronRightRoundedIcon/> </Button>
+                        <Link to='/joblist'><Button className='view_all' variant="text">View All <ChevronRightRoundedIcon/> </Button></Link>
                     </div>
                 </div>
 

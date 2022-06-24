@@ -1,12 +1,15 @@
-import React, { useState } from 'react';
+import React, { useState,useEffect } from 'react';
 import { useNavigate } from "react-router-dom";
 import { useLocalStorage } from "./useLocalStorage";
+import axios from 'axios';
+import { BASE_URL } from '../utils/constant'
 
 const JobLandingContext = React.createContext();
 const JobLandingProvider = ({ children }) => {
     const [example, setExample] = useState("example");
     const [user, setUser] = useLocalStorage("user", null);
     const navigate = useNavigate();
+
 
     const login = async (data) => {
         setUser(data);
@@ -21,7 +24,10 @@ const JobLandingProvider = ({ children }) => {
         // return <Navigate to="/" replace />;
     };
 
-    return <JobLandingContext.Provider value={{example, setExample,user,login,logout}}>
+    // useEffect(() => {
+    //     getJobList()
+    // }, [])
+    return <JobLandingContext.Provider value={{example, setExample,user,login,logout }}>
         {children}
     </JobLandingContext.Provider>;
 }

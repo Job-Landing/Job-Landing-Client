@@ -1,15 +1,16 @@
-import React from 'react'
+import React,{useState} from 'react'
 import Wrapper from '../asserts/wrappers/DashboardChart'
 import { Chart } from "react-google-charts";
 
-const DashboardChart = () => {
+const DashboardChart = ({jobStatus, date}) => {
     const StatusData = [
         ["Status", "Current"],
-        ["pending", 11],
-        ["interview", 2],
-        ["offer", 2],
-        ["decline", 2],
+        ["pending", jobStatus['pending']],
+        ["interview", jobStatus['interview']],
+        ["offer", jobStatus['offer']],
+        ["decline", jobStatus['decline']],
     ];
+
 
     const StatusOptions = {
         title: "My Current Activities",
@@ -30,27 +31,15 @@ const DashboardChart = () => {
     const DailyData = [
         [
             {
-            type: "date",
-            id: "Date",
+                type: "date",
+                id: "Date",
             },
             {
-            type: "number",
-            id: "Won/Loss",
+                type: "number",
+                id: "Won/Loss",
             },
         ],
-        [new Date(2022, 3, 13), 2],
-        [new Date(2022, 3, 14), 5],
-        [new Date(2022, 3, 15), 7],
-        [new Date(2022, 3, 16), 8],
-        [new Date(2022, 3, 17), 5],
-        [new Date(2022, 9, 4), 12],
-        [new Date(2022, 9, 5), 1],
-        [new Date(2022, 9, 12), 7],
-        [new Date(2022, 9, 13), 4],
-        [new Date(2022, 9, 19), 5],
-        [new Date(2022, 9, 23), 8],
-        [new Date(2022, 9, 24), 9],
-        [new Date(2022, 9, 30), 5],
+        ...date
     ];
 
     const DailyOptions = {
@@ -113,6 +102,8 @@ const DashboardChart = () => {
                 options={StatusOptions}
                 className='chart'
             />
+
+
         </Wrapper>
     );
 }

@@ -47,7 +47,6 @@ const JobListTable = () => {
         }else {
             setTotalPage(parseInt(response.data.length/10 + 1))
         }
-
     }
 
     const deleteJob = async (job_id) => {

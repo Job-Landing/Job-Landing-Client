@@ -5,7 +5,7 @@ import Wrapper from '../asserts/wrappers/DashboardTable'
 
 const DashboardTable = () => {
     return (
-        <Wrapper className='animate__animated animate__zoomInDown'>
+        <Wrapper className='animate__animated animate__fadeIn'>
             <div className='table_wrapper'>
                 <div className='table'>
                     <div className='inner_table'>

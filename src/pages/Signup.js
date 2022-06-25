@@ -86,7 +86,6 @@ const Signup = (() => {
   return (
     <Wrapper>
       <HomeNavbar />
-      {/* <h1>Signup</h1> */}
       <main className='main'>
         <div className='left'>
           <div className='left_inner'>

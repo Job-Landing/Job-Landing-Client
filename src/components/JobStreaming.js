@@ -12,7 +12,10 @@ const JobStreaming = () => {
     const getJobStreamingList = async () => {
         const response = await axios(`${BASE_URL}/stream`)
         if (response.status === 200) {
-            setStreamItem(response.data)
+            // setStreamItem(response.data)
+            setStreamItem((response.data).sort((a, b) => {
+                return a.createAt > b.createAt ? -1 : 1
+            }))
             console.log(response.data)
         }
     }
@@ -49,9 +52,9 @@ const JobStreaming = () => {
                                 return <tr key={item._id}>
                                     <td>{item.position}</td>
                                     <td>{item.company}</td>
-                                    <td>{item.applyUrl}</td>
-                                    <td>May 23, 2022</td>
-                                    <td><span className='pending'>pending</span></td>
+                                    <td>{item.type}</td>
+                                    <td>{item.createAt.substring(0,10)}</td>
+                                    <td><a className='no_underline' target="_blank" href={item.applyUrl} rel="noreferrer"><Button variant="text">Link</Button></a></td>
                                 </tr>
                             })
                         }

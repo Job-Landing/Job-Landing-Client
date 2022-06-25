@@ -143,7 +143,7 @@ const Wrapper = styled.main`
     font-weight: bold;
     cursor: pointer;
     background: #1976d2;
-    box-shadow:rgb(25 118 210 / 24%) 0px 8px 16px 0px;;
+    box-shadow:rgb(25 118 210 / 24%) 0px 8px 16px 0px;
     padding: 15px;
     text-align: center;
     text-transform: uppercase;

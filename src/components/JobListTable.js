@@ -10,14 +10,24 @@ import { BASE_URL } from '../utils/constant'
 import { JobLandingContext } from '../context/context';
 import Button from '@mui/material/Button';
 import Pagination from '@mui/material/Pagination';
+import TextField from '@mui/material/TextField';
+import Autocomplete from '@mui/material/Autocomplete';
+
 
 const JobListTable = () => {
     const { user } = React.useContext(JobLandingContext);
+    const [isEmpty, setIsEmpty] = useState(true);
     const [currPage, setCurrPage] = useState(1);
     const [totalPage, setTotalPage] = useState(1);
     const [firstSlice, setFirstSlice] = useState(0);
     const [lastSlice, setLastSlice] = useState(10);
     const [jobList, setJobList] = useState([]);
+
+    // filter
+    const options = ['Pending', 'Interview', 'Offer', 'Decline'];
+    const [value, setValue] = useState(options[0]);
+    const [inputValue, setInputValue] = React.useState('');
+
     const [deleteItem, setDeleteItem] = useState('none');
     const alertFadeIn = ()=>{
         setDeleteItem('success')
@@ -41,8 +51,11 @@ const JobListTable = () => {
 
     const getJobList = async () => {
         const response = await axios(`${BASE_URL}/job/${user._id}`)
-        // console.log(response.data)
-        setJobList(response.data)
+        setJobList((response.data).sort((a, b) => {
+            return a.createAt > b.createAt ? -1 : 1
+        }))
+
+        if (response.data.length !== 0) setIsEmpty(false);
         if ((response.data.length / 10) % 1 === 0) {
             setTotalPage(parseInt(response.data.length/10))
         }else {
@@ -65,7 +78,30 @@ const JobListTable = () => {
     return (
         <Wrapper className="animate__animated animate__fadeIn">
             <div className='inner_table'>
-                <h2>All Jobs</h2>
+                <div className='inner_table_row1'>
+                    <h2>All Jobs</h2>
+                    {/* <div>
+                        <div>{`value: ${value !== null ? `'${value}'` : 'null'}`}</div>
+                        <div>{`inputValue: '${inputValue}'`}</div>
+                        <br />
+                        <Autocomplete
+                            value={value}
+                            onChange={(e, newValue) => {
+                                setValue(newValue);
+                            }}
+                            inputValue={inputValue}
+                            onInputChange={(e, newInputValue) => {
+                                setInputValue(newInputValue);
+
+                            }}
+                            id="controllable-states-demo"
+                            options={options}
+                            sx={{ width: 300 }}
+                            renderInput={(params) => <TextField {...params} label="Status" />}
+                        />
+                    </div> */}
+                    <Link className="link" to='/addjob'>Add</Link>
+                </div>
                 <table className='information_table'>
                     <tbody>
                         <tr className='tr'>
@@ -102,7 +138,8 @@ const JobListTable = () => {
                         })}
                     </tbody>
                 </table>
-                <Pagination className="pagination" count={totalPage} color="primary" page={currPage} onChange={handlePageChange} />
+                {isEmpty ? <p className="empty">Ohh~ Empty</p> : <Pagination className="pagination" count={totalPage} color="primary" page={currPage} onChange={handlePageChange} />}
+
             </div>
 
              <Alert className={deleteItem ==='success' ? 'alert animate__animated animate__fadeInRight' : deleteItem ==='none' ? 'none': 'alert animate__animated  animate__fadeOutRight'} severity="error"><strong>Delete success!</strong></Alert>

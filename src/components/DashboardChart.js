@@ -5,7 +5,7 @@ import { Chart } from "react-google-charts";
 const DashboardChart = ({jobStatus, date}) => {
     const StatusData = [
         ["Status", "Current"],
-        ["pending", jobStatus['pending']],
+        ["pending", jobStatus['pending'] ? jobStatus['pending'] : 1],
         ["interview", jobStatus['interview']],
         ["offer", jobStatus['offer']],
         ["decline", jobStatus['decline']],

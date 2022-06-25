@@ -44,15 +44,14 @@ const Dashboard = () => {
           let createAt = response_data[i]['createAt'];
           let createAtList = createAt.split('-')
           if (!dateMap.has(createAt)) {
-            var value = [new Date(createAtList[0], createAtList[1], createAtList[2]), 1]
+            var value = [new Date(createAtList[0], createAtList[1]-1, createAtList[2]), 1]
             dateMap.set(createAt, value)
           } else {
             dateMap.get(createAt)[1]++;
           }
-        console.log(dateMap[0])
       }
       dateMap.forEach(function (value, key, map) {
-        console.log(`dateMap.get('${key}') = ${value}`)
+        // console.log(`dateMap.get('${key}') = ${value}`)
         dateArray.push(value)
       })
 

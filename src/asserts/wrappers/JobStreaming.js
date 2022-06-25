@@ -108,6 +108,9 @@ const Wrapper = styled.section`
     .none{
         display: none;
     }
+    .no_underline{
+        text-decoration: none;
+    }
 
 `
 

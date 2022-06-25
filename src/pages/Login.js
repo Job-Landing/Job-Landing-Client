@@ -14,6 +14,7 @@ const Login = (() => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [showPassword, setShowPassword] = useState(false);
+    const [correctPassword, setCorrectPassword] = useState(true);
 
     const handleChangeEmail = (e) => {
         setEmail(e.target.value)
@@ -28,13 +29,19 @@ const Login = (() => {
 
     const loginValidator = async (e) => {
         e.preventDefault();
-        const user = {email: email, password: password}
-        const response = await axios.post(`${BASE_URL}/user/signin`, user)
-        if (!response) {
-            throw new Error('wrong password or email')
+        try {
+            const user = {email: email, password: password}
+            const response = await axios.post(`${BASE_URL}/user/signin`, user)
+            if (!response) {
+                throw new Error('wrong password or email')
+            }
+            login(response.data);
+            console.log(response);
+        } catch (err) {
+
+            // console.log(err)
         }
-        login(response.data);
-        console.log(response);
+
     }
 
     return (
@@ -54,13 +61,13 @@ const Login = (() => {
                             <h3 className="form_title">Sign in to Job Landing</h3>
                             <p className='form_title1'>Enter your details below.</p>
                         </div>
-                        <form>
-                            <input autoComplete="off" type="email" name="email" placeholder='E-mail' onChange={handleChangeEmail}/>
+                        <form onSubmit={loginValidator}>
+                            <input autoComplete="off" type="email" name="email" placeholder='E-mail' onChange={handleChangeEmail} required />
                             <input autoComplete="off" type={!showPassword ? "password" : "text"} name="password" placeholder='Password'
-                                onChange={handleChangePassword} />
+                                onChange={handleChangePassword} required />
                             {!showPassword ? <VisibilityOffIcon onClick={handleClickShowPassword} className='seen'/> :
-                  <VisibilityIcon onClick={handleClickShowPassword} className='seen'/>}
-                            <button className='submit' onClick={loginValidator}>Log In</button>
+                                <VisibilityIcon onClick={handleClickShowPassword} className='seen' />}
+                            <button className='submit' type='submit'>Log In</button>
                         </form>
                     </div>
                 </div>

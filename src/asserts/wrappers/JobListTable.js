@@ -11,8 +11,6 @@ const Wrapper = styled.section`
     }
     h2{
         margin: 0;
-        padding: 20px 0 0 0;
-        padding-left: 20px;
     }
     table, th, td {
         border-collapse: collapse;
@@ -40,16 +38,16 @@ const Wrapper = styled.section`
     tr td:nth-child(1){
         padding: 8px 5px 8px 15px;
     }
-    tr td:nth-child(1){
+    tr td:nth-child(1), tr th:nth-child(1){
         width: 20%;
     }
-    tr td:nth-child(2){
+    tr td:nth-child(2), tr th:nth-child(2){
         width: 20%;
     }
-    tr td:nth-child(3), tr td:nth-child(4),tr td:nth-child(5){
+    tr td:nth-child(3), tr td:nth-child(4),tr td:nth-child(5), tr th:nth-child(3), tr th:nth-child(4),tr th:nth-child(5){
         width: 15%;
     }
-    tr td:nth-child(6), tr td:nth-child(7), tr td:nth-child(8){
+    tr td:nth-child(6), tr td:nth-child(7), tr td:nth-child(8), tr th:nth-child(6), tr th:nth-child(7), tr th:nth-child(8){
         width: 8%;
     }
     tr td:nth-child(2),tr td:nth-child(3),tr td:nth-child(4),tr td:nth-child(5),tr td:nth-child(6), tr td:nth-child(7), tr td:nth-child(8){
@@ -122,10 +120,56 @@ const Wrapper = styled.section`
         align-items: center;
         justify-content: center;
     }
+    .empty{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .link{
+        text-decoration: none;
+        color: white;
+        font-size: 18px;
+        font-weight: 600;
+        width: 100px;
+        height: 30px;
+        background-color:#8489ba;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 5px 0 5px 0;
+        cursor: pointer;
+        box-shadow:rgb(132 137 186 / 24%) 0px 8px 16px 0px;
+        border-radius: 15px;
+        transition: 0.5s;
+        background-size: 200% auto;
+        margin-right: 10px;
+    }
+    .link:hover {
+        color: #fff;
+        text-decoration: none;
+        background: #787fb6;
+        box-shadow:none;
+    }
+    .inner_table_row1{
+        display: flex;
+        align-items: center;
+        padding: 20px 0 0 0;
+        padding-left: 20px;
+        justify-content: space-between;
+    }
 
     li button, li div{
         color: white;
     }
+
+    /* label, input, svg{
+        color: white;
+    }
+
+    .react-date-picker__wrapper, .MuiOutlinedInput-root, .MuiSelect-select, .MuiFormControl-root, .MuiBox-root, .MuiFormControl-root, .MuiAutocomplete-root{
+        border-radius: 10px;
+        border-color: red;
+    } */
 
 `
 

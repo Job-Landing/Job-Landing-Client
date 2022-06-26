@@ -21,8 +21,7 @@ const useRequest = ({ url, method, body, onSuccess }) => {
     } catch (error) {
       console.log(error);
       setErrors(
-        <div>
-          <h4>Oooops...</h4>
+        <div className='error_msg'>
           <ul>
             {error.response.data.errors.map((err) => (
               <li key={err.field}>{err.message}</li>

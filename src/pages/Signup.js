@@ -7,7 +7,9 @@ import { HomeNavbar } from '../components'
 import register from '../asserts/images/register.png'
 import { BASE_URL } from '../utils/constant'
 import axios from 'axios';
-import {JobLandingContext} from '../context/context';
+import { JobLandingContext } from '../context/context';
+import useRequest from '../hooks/use-request';
+
 
 const initialState = {
   name: '',
@@ -27,6 +29,23 @@ const Signup = (() => {
   const [showPassword, setShowPassword] = useState(false);
   const [loading, setLoading] = useState(false);
   // const [passwordValidate, setPasswordValidate] = useState(validateState);
+
+  const { doRequest, errors } = useRequest({
+    url: `${BASE_URL}/user/signup`,
+    method: 'post',
+    body: {
+      username: values.name,
+      email: values.email,
+      password: values.password
+    },
+    onSuccess: (data) => {
+      setLoading(true)
+        setTimeout(() => {
+          setLoading(false);
+          loginValidator(values.email, values.password)
+        }, 2000);
+    },
+  });
 
   const handleChange = (e) => {
     setValues({ ...values, [e.target.name]: e.target.value })
@@ -49,38 +68,38 @@ const Signup = (() => {
   const handleSubmit = async (e) => {
     console.log(values)
     e.preventDefault();
-    setLoading(true)
-    const {name, email, password} = values;
-    if (!email || !password || !name) {
-      console.log("can not be empty!");
-      return;
-    }
+    await doRequest();
+    // const {name, email, password} = values;
+    // if (!email || !password || !name) {
+    //   console.log("can not be empty!");
+    //   return;
+    // }
 
-    const newUser = {username: name, email: email, password: password};
-    await fetch(`${BASE_URL}/user/signup`, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(newUser),
-    })
-      .then(res => {
-        if (res.status >= 400) {
-          setLoading(false);
-          throw new Error("Server responds with error!");
-        }
-      })
-      .then(() => {
-        setTimeout(() => {
-          setLoading(false);
-          loginValidator(email, password)
-        }, 2000);
+    // const newUser = {username: name, email: email, password: password};
+    // await fetch(`${BASE_URL}/user/signup`, {
+    //   method: "POST",
+    //   headers: {
+    //     "Content-Type": "application/json",
+    //   },
+    //   body: JSON.stringify(newUser),
+    // })
+    //   .then(res => {
+    //     if (res.status >= 400) {
+    //       setLoading(false);
+    //       throw new Error("Server responds with error!");
+    //     }
+    //   })
+    //   .then(() => {
+    //     setTimeout(() => {
+    //       setLoading(false);
+    //       loginValidator(email, password)
+    //     }, 2000);
 
-      })
-      .catch(error => {
-        window.alert(error);
-        return;
-      });
+    //   })
+    //   .catch(error => {
+    //     window.alert(error);
+    //     return;
+    //   });
   };
 
   return (
@@ -110,7 +129,7 @@ const Signup = (() => {
                   <VisibilityIcon onClick={handleClickShowPassword} className='seen'/>}
               <button className={!loading ? 'submit' : 'submitLoading'}>{ !loading ? 'Sign Up' : <div class="lds-ellipsis"><div></div><div></div><div></div><div></div></div> }</button>
             </form>
-
+            {errors}
           </div>
         </div>
       </main>

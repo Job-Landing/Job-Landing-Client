@@ -24,7 +24,8 @@ const Login = () => {
       email,
       password,
     },
-    onSuccess: () => {
+    onSuccess: (data) => {
+      login(data);
       //   Router.push('/');
     },
   });

@@ -9,6 +9,19 @@ const Wrapper = styled.section`
         padding: 0 15px 15px 15px;
 
     }
+    .filter_form{
+        background-color: rgba(50, 50, 64, 0.79);
+        border-radius: 15px;
+        padding: 0 15px 15px 15px;
+        margin-bottom: 60px;
+    }
+    .filter_form_wrapper{
+        padding: 20px 0 20px 20px;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        row-gap: 20px;
+    }
+
     h2{
         margin: 0;
     }
@@ -150,6 +163,10 @@ const Wrapper = styled.section`
         background: #787fb6;
         box-shadow:none;
     }
+    .clear{
+        width: 380px;
+        height: 50px;
+    }
     .inner_table_row1{
         display: flex;
         align-items: center;
@@ -158,18 +175,32 @@ const Wrapper = styled.section`
         justify-content: space-between;
     }
 
+
     li button, li div{
         color: white;
     }
 
-    /* label, input, svg{
+    input{
         color: white;
     }
-
-    .react-date-picker__wrapper, .MuiOutlinedInput-root, .MuiSelect-select, .MuiFormControl-root, .MuiBox-root, .MuiFormControl-root, .MuiAutocomplete-root{
+    .MuiOutlinedInput-root, .MuiSelect-select, .MuiFormControl-root, .MuiBox-root, .MuiFormControl-root, .MuiAutocomplete-root{
         border-radius: 10px;
-        border-color: red;
-    } */
+    }
+    .MuiAutocomplete-endAdornment button{
+        color: white;
+    }
+    .MuiOutlinedInput-root{
+        border: 1px solid white;
+    }
+    label{
+        padding: 0 5px 0 5px;
+        background: #2c2c39;
+        border-radius: 5px;
+        color: white;
+    }
+    .MuiFormControl-root{
+        width: 380px;
+    }
 
 `
 

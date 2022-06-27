@@ -23,8 +23,8 @@ const useRequest = ({ url, method, body, onSuccess }) => {
       setErrors(
         <div className='error_msg'>
           <ul>
-            {error.response.data.errors.map((err) => (
-              <li key={err.field}>{err.message}</li>
+            {error.response.data.errors.map((err, index) => (
+              <li key={index}>{err.message}</li>
             ))}
           </ul>
         </div>

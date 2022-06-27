@@ -8,6 +8,8 @@ const Wrapper = styled.section`
         column-gap: 20px;
     }
     .inner_table{
+        display: flex;
+        flex-direction: column;
         background-color: rgba(50, 50, 64, 0.79);
         border-radius: 15px;
         padding: 0 15px 15px 15px;
@@ -53,9 +55,11 @@ const Wrapper = styled.section`
         text-align: center;
         justify-content: center;
     }
-    .view_all{
-        float: right;
-        margin-right: 10px;
+    .link{
+        text-decoration: none;
+        display:flex;
+        justify-content:flex-end;
+        width: 100%;
     }
     td{
         font-size: 14px;
@@ -91,6 +95,14 @@ const Wrapper = styled.section`
         padding: 2px 4px 2px 4px;
         font-size: 13px;
         font-weight: 600;
+    }
+    @media only screen and (max-width: 800px) {
+        .table{
+            display:block;
+        }
+        .inner_table{
+            margin-bottom: 20px;
+        }
     }
 `
 

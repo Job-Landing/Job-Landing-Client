@@ -4,7 +4,8 @@ const Wrapper = styled.section`
     padding-top: 20px;
     .box_wrapper{
         display: grid;
-        grid-template-columns: 1fr 1fr 1fr;
+        /* grid-template-columns: repeat(3, 1fr); */
+        grid-template-columns: repeat( 3, minmax(250px, 1fr) );
         column-gap: 30px;
     }
     .box{
@@ -26,6 +27,15 @@ const Wrapper = styled.section`
     }
     img{
         width: 180px;
+    }
+    @media only screen and (max-width: 800px) {
+        .box_wrapper{
+            display: block;
+        }
+        .box{
+            margin-bottom: 10px;
+        }
+
     }
 `
 

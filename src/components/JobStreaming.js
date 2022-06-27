@@ -16,7 +16,6 @@ const JobStreaming = () => {
             setStreamItem((response.data).sort((a, b) => {
                 return a.createAt > b.createAt ? -1 : 1
             }))
-            console.log(response.data)
         }
     }
 

@@ -7,7 +7,7 @@ const Wrapper = styled.section`
         background-color: rgba(50, 50, 64, 0.79);
         border-radius: 15px;
         padding: 0 15px 15px 15px;
-
+        margin-bottom: 20px;
     }
     .filter_form{
         background-color: rgba(50, 50, 64, 0.79);
@@ -28,7 +28,11 @@ const Wrapper = styled.section`
     table, th, td {
         border-collapse: collapse;
     }
+    .table_wrapper{
+        overflow-x:auto;
+    }
     .information_table{
+        overflow-x:200px;
         padding: 20px;
         margin-top: 20px;
     }
@@ -200,6 +204,24 @@ const Wrapper = styled.section`
     }
     .MuiFormControl-root{
         width: 380px;
+    }
+
+    @media only screen and (max-width: 1200px) {
+        .filter_form_wrapper{
+            grid-template-columns: 1fr 1fr;
+        }
+    }
+
+    @media only screen and (max-width: 900px) {
+        .filter_form_wrapper{
+            grid-template-columns: 1fr;
+        }
+        .filter_form{
+            width: 420px;
+        }
+        .table_wrapper{
+            width: 420px;
+        }
     }
 
 `

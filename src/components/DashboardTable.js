@@ -33,7 +33,7 @@ const DashboardTable = ({jobList}) => {
                                 })}
                             </tbody>
                         </table>
-                        <Link to='/joblist'><Button className='view_all' variant="text">View All <ChevronRightRoundedIcon/> </Button></Link>
+                        <Link className='link' to='/joblist'><Button variant="text">View All <ChevronRightRoundedIcon/> </Button></Link>
                     </div>
 
                     <div className='inner_table'>
@@ -54,7 +54,7 @@ const DashboardTable = ({jobList}) => {
                                 })}
                             </tbody>
                         </table>
-                        <Link to='/joblist'><Button className='view_all' variant="text">View All <ChevronRightRoundedIcon/> </Button></Link>
+                        <Link className='link' to='/joblist'><Button className='view_all' variant="text">View All <ChevronRightRoundedIcon/> </Button></Link>
                     </div>
                 </div>
 

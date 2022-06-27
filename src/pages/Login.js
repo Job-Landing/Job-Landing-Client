@@ -6,7 +6,6 @@ import { Link } from 'react-router-dom';
 import { HomeNavbar } from '../components';
 import loginImg from '../asserts/images/login.png';
 import { BASE_URL } from '../utils/constant';
-import axios from 'axios';
 import { JobLandingContext } from '../context/context';
 import useRequest from '../hooks/use-request';
 

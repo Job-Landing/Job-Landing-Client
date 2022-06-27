@@ -57,6 +57,9 @@ const Wrapper = styled.section`
     margin-top: 40px;
     margin-left: 20px;
   }
+  @media only screen and (max-width: 800px) {
+    display: none;
+  }
 `
 
 export default Wrapper;

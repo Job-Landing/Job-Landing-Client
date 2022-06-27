@@ -1,4 +1,4 @@
-import React,{useState, useEffect} from 'react'
+import React from 'react'
 import pending from '../asserts/images/pending.png'
 import schedule from '../asserts/images/schedule.png'
 import decline from '../asserts/images/decline.png'

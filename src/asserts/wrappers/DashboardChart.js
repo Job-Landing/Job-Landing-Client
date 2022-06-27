@@ -19,6 +19,12 @@ const Wrapper = styled.section`
         border-radius: 15px;
         padding: 15px 0 0 20px;
     }
+    @media only screen and (max-width: 800px) {
+        display:block;
+        .calendar{
+            margin-bottom: 20px;
+        }
+    }
 `
 
 export default Wrapper;

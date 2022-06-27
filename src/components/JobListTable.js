@@ -79,42 +79,44 @@ const JobListTable = () => {
                     <h2>All Jobs</h2>
                     <Link className="link" to='/addjob'>Add</Link>
                 </div>
-                <table className='information_table'>
-                    <tbody>
-                        <tr className='tr'>
-                            <th>Position</th>
-                            <th>Company</th>
-                            <th>Type</th>
-                            <th>Date / Time</th>
-                            <th>Status</th>
-                            <th>Link</th>
-                            <th>Delete</th>
-                            <th className='last_column'>Update</th>
-                        </tr>
-                        {jobList.slice(firstSlice, lastSlice).map((job, index) => {
-                            return <tr key={index}>
-                                <td>{job.position}</td>
-                                <td>{job.company}</td>
-                                <td>{job.type}</td>
-                                <td>{job.createAt}</td>
-                                <td><span className={job.status === 'pending' ? 'pending' : job.status === 'interview' ? 'interview' : job.status === 'offer' ? 'offer' : 'decline'}>{job.status}</span></td>
-                                <td><a className='no_underline' target="_blank" href={job.applyUrl} rel="noreferrer"><Button variant="text">Link</Button></a></td>
-                                <td>
-                                    <IconButton aria-label="delete" size="large" className='delete_icon'>
-                                        <DeleteIcon fontSize="small" onClick={() => deleteJob(job._id)} />
-                                    </IconButton>
-                                </td>
-                                <td>
-                                    <Link to={"/jobupdate/" + job._id}>
-                                        <IconButton aria-label="fingerprint" color="success">
-                                            <Fingerprint />
-                                        </IconButton>
-                                    </Link>
-                                </td>
+                <div className='table_wrapper'>
+                    <table className='information_table'>
+                        <tbody>
+                            <tr className='tr'>
+                                <th>Position</th>
+                                <th>Company</th>
+                                <th>Type</th>
+                                <th>Date / Time</th>
+                                <th>Status</th>
+                                <th>Link</th>
+                                <th>Delete</th>
+                                <th className='last_column'>Update</th>
                             </tr>
-                        })}
-                    </tbody>
-                </table>
+                            {jobList.slice(firstSlice, lastSlice).map((job, index) => {
+                                return <tr key={index}>
+                                    <td>{job.position}</td>
+                                    <td>{job.company}</td>
+                                    <td>{job.type}</td>
+                                    <td>{job.createAt}</td>
+                                    <td><span className={job.status === 'pending' ? 'pending' : job.status === 'interview' ? 'interview' : job.status === 'offer' ? 'offer' : 'decline'}>{job.status}</span></td>
+                                    <td><a className='no_underline' target="_blank" href={job.applyUrl} rel="noreferrer"><Button variant="text">Link</Button></a></td>
+                                    <td>
+                                        <IconButton aria-label="delete" size="large" className='delete_icon'>
+                                            <DeleteIcon fontSize="small" onClick={() => deleteJob(job._id)} />
+                                        </IconButton>
+                                    </td>
+                                    <td>
+                                        <Link to={"/jobupdate/" + job._id}>
+                                            <IconButton aria-label="fingerprint" color="success">
+                                                <Fingerprint />
+                                            </IconButton>
+                                        </Link>
+                                    </td>
+                                </tr>
+                            })}
+                        </tbody>
+                    </table>
+                </div>
                 {isEmpty ? <p className="empty">Ohh~ Empty</p> : <Pagination className="pagination" count={totalPage} color="primary" page={currPage} onChange={handlePageChange} />}
 
             </div>

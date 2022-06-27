@@ -39,7 +39,7 @@ const Wrapper = styled.section`
     }
     .select{
         position: absolute;
-        height: 215px;
+        height: 355px;
         width: 200px;
         margin-top: 60px;
         margin-right: 30px;
@@ -69,7 +69,7 @@ const Wrapper = styled.section`
         margin-top: 5px;
         margin-bottom: 2px;
     }
-    p:nth-child(4), p:nth-child(5), p:nth-child(7){
+    p:nth-child(4), p:nth-child(5),p:nth-child(6), p:nth-child(7), p:nth-child(8), p:nth-child(9), p:nth-child(11){
         font-size: 15px;
         font-weight: 500;
         margin-bottom: 0;
@@ -80,7 +80,7 @@ const Wrapper = styled.section`
         margin-right: auto;
         border-radius: 10px;
     }
-    p:nth-child(4):hover, p:nth-child(5):hover, p:nth-child(7):hover{
+    p:nth-child(4):hover, p:nth-child(5):hover,p:nth-child(6):hover, p:nth-child(7):hover, p:nth-child(8):hover, p:nth-child(9):hover, p:nth-child(11):hover{
         background-color: #D6D5A8;
         cursor: pointer;
     }

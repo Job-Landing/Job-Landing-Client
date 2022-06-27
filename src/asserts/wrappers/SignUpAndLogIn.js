@@ -134,17 +134,6 @@ const Wrapper = styled.main`
     align-items: center;
   }
 
-  .error_msg h4{
-    margin: 0;
-  }
-  .error_msg ul{
-    list-style: none;
-    padding: 0;
-    list-style-type: none;
-    color: #ff5252;
-    margin-top: 10px;
-  }
-
   .submit {
     width: 380px;
     border: none;

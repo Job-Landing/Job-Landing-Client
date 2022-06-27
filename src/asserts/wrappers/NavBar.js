@@ -87,6 +87,10 @@ const Wrapper = styled.section`
     hr{
         border-bottom: 1px dashed white;
     }
+    .link{
+        text-decoration: none;
+        color: #1e203b;
+    }
 `
 
 export default Wrapper;

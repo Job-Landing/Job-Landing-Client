@@ -16,7 +16,7 @@ const NavBar = () => {
     return (
         <Wrapper>
             <div className='navbar_wrapper'>
-                <SearchRoundedIcon className='icon' />
+                {/* <SearchRoundedIcon className='icon' /> */}
                 <img src={avatar} alt="avatar" onClick={openSelect} />
             </div>
             <div className='arrow_up' style={selectOpen ? { visibility: "visible" } : {visibility: "hidden"}}></div>
@@ -24,8 +24,8 @@ const NavBar = () => {
                 <p>{user.username}</p>
                 <p>{user.email}</p>
                 <hr></hr>
-                <p>Home</p>
-                <p>Profile</p>
+                <p><Link className='link' to='/dashboard'>Dashboard</Link></p>
+                <p><Link className='link' to='/profile'>Profile</Link></p>
                 <hr />
                 <p onClick={logout}>Logout</p>
             </div>

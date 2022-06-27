@@ -62,7 +62,7 @@ const JobListTable = () => {
     const [inputType, setInputType] = useState('');
     const typeFilter = () => {
         if (type === null) setJobList(jobListStatic);
-        else if (value.toLowerCase() === 'full-time') {
+        else if (type.toLowerCase() === 'full-time') {
             const newItem = jobList.filter((item) => {
                 return item.type === 'full-time';
             })
@@ -85,11 +85,30 @@ const JobListTable = () => {
         }
     }
 
+    const [position, setPosition] = useState('');
+    const positionFilter = (searchValue) => {
+        setPosition(searchValue)
+        const newItem = jobListStatic.filter((item) => {
+            return item.position.toLowerCase().includes(searchValue.toLowerCase())
+        })
+        setJobList(newItem);
+    }
+
+    const [company, setCompany] = useState('');
+    const companyFilter = (searchValue) => {
+        setCompany(searchValue)
+        const newItem = jobListStatic.filter((item) => {
+            return item.company.toLowerCase().includes(searchValue.toLowerCase())
+        })
+        setJobList(newItem);
+    }
+
     const clearSearchForm = () => {
         setValue('')
-        setInputValue('')
         setType('')
-        setInputValue('')
+        setPosition('')
+        setCompany('')
+        setJobList(jobListStatic)
     }
 
     const [deleteItem, setDeleteItem] = useState('none');
@@ -147,7 +166,6 @@ const JobListTable = () => {
 
     useEffect(() => {
         getJobList()
-
     }, [deleteItem])
 
 
@@ -164,6 +182,20 @@ const JobListTable = () => {
                         <TextField
                             id="demo-helper-text-aligned-no-helper"
                             label="Position"
+                            value={position}
+                            onChange={(e) => {
+                                positionFilter(e.target.value);
+                            }}
+                        />
+                    </div>
+                    <div className='filter search_filter'>
+                        <TextField
+                            id="demo-helper-text-aligned-no-helper"
+                            label="Company"
+                            value={company}
+                            onChange={(e) => {
+                                companyFilter(e.target.value);
+                            }}
                         />
                     </div>
                     <div className='filter status_filter'>
@@ -200,24 +232,6 @@ const JobListTable = () => {
                             options={typesOptions}
                             sx={{ width: 300 }}
                             renderInput={(params) => <TextField {...params} label="Type" />}
-                        />
-                    </div>
-                    <div className='filter sort_filter'>
-                        <Autocomplete
-                            value={value}
-                            onChange={(e, newValue) => {
-                                setValue(newValue);
-                                setJobList(jobListStatic)
-                            }}
-                            inputValue={inputValue}
-                            onInputChange={(e, newInputValue) => {
-                                setInputType(newInputValue);
-                                setJobList(jobListStatic)
-                            }}
-                            id="controllable-states-demo"
-                            options={statusOptions}
-                            sx={{ width: 300 }}
-                            renderInput={(params) => <TextField {...params} label="Sort" />}
                         />
                     </div>
                     <div>

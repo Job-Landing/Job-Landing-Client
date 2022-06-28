@@ -1,1 +1,1 @@
-export const BASE_URL = 'http://localhost:3001'
+export const BASE_URL = 'https://job-landing-client-iteration3.herokuapp.com'

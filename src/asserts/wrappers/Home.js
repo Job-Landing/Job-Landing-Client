@@ -48,6 +48,7 @@ const Wrapper = styled.main`
     margin-right: auto;
     margin-top: 60px;
     color: white;
+    margin-bottom: 40px;
   }
   .information_title {
     font-size: 35px;

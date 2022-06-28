@@ -8,10 +8,14 @@ specifiers:
   '@testing-library/jest-dom': ^5.16.4
   '@testing-library/react': ^13.2.0
   '@testing-library/user-event': ^13.5.0
+  animate.css: ^4.1.1
   axios: ^0.21.1
+  date-fns: ^2.28.0
   dotenv: ^8.2.0
   react: ^17.0.1
+  react-date-picker: ^8.4.0
   react-dom: ^17.0.1
+  react-google-charts: ^4.0.0
   react-icons: ^3.11.0
   react-router-dom: ^6.3.0
   react-scripts: 4.0.0
@@ -27,10 +31,14 @@ dependencies:
   '@testing-library/jest-dom': 5.16.4
   '@testing-library/react': 13.2.0_sfoxds7t5ydpegc3knd667wn6m
   '@testing-library/user-event': 13.5.0
+  animate.css: 4.1.1
   axios: 0.21.4
+  date-fns: 2.28.0
   dotenv: 8.6.0
   react: 17.0.2
+  react-date-picker: 8.4.0_sfoxds7t5ydpegc3knd667wn6m
   react-dom: 17.0.2_react@17.0.2
+  react-google-charts: 4.0.0_sfoxds7t5ydpegc3knd667wn6m
   react-icons: 3.11.0_react@17.0.2
   react-router-dom: 6.3.0_sfoxds7t5ydpegc3knd667wn6m
   react-scripts: 4.0.0
@@ -2570,6 +2578,12 @@ packages:
     resolution: {integrity: sha512-L28j2FcJfSZOnL1WBjDYp2vUHCeIFlyYI/53EwD/rKUBQ7MtUUfbQWiyKJGpcnv4/WgrhWsFKrcPstcAt/J0tQ==}
     dev: false
 
+  /@types/react-calendar/3.5.1:
+    resolution: {integrity: sha512-d71cKkkSN8CA4PWx87jQOrEyElc2uY3hwpXmceroaPMrMaZ9fPlLFPLP0OCaay5nlJ6ErNmHVb75lE1huharPQ==}
+    dependencies:
+      '@types/react': 18.0.8
+    dev: false
+
   /@types/react-dom/18.0.3:
     resolution: {integrity: sha512-1RRW9kst+67gveJRYPxGmVy8eVJ05O43hg77G2j5m76/RFJtMbcfAs2viQ2UNsvvDg8F7OfQZx8qQcl6ymygaQ==}
     dependencies:
@@ -2939,6 +2953,10 @@ packages:
       '@xtuc/long': 4.2.2
     dev: false
 
+  /@wojtekmaj/date-utils/1.0.3:
+    resolution: {integrity: sha512-1VPkkTBk07gMR1fjpBtse4G+oJqpmE+0gUFB0dg3VIL7qJmUVaBoD/vlzMm/jNeOPfvlmerl1lpnsZyBUFIRuw==}
+    dev: false
+
   /@xtuc/ieee754/1.2.0:
     resolution: {integrity: sha512-DX8nKgqcGwsc0eJSqYt5lwP4DH5FlHnmuWWBRy7X0NcaGR0ZtuyeESgMwTYVEtxmsNGY+qit4QYT/MIYTOTPeA==}
     dev: false
@@ -3068,6 +3086,10 @@ packages:
 
   /alphanum-sort/1.0.2:
     resolution: {integrity: sha1-l6ERlkmyEa0zaR2fn0hqjsn74KM=}
+    dev: false
+
+  /animate.css/4.1.1:
+    resolution: {integrity: sha512-+mRmCTv6SbCmtYJCN4faJMNFVNN5EuCTTprDTAo7YzIGji2KADmakjVA3+8mVDkZ2Bf09vayB35lSQIex2+QaQ==}
     dev: false
 
   /ansi-colors/3.2.4:
@@ -4799,6 +4821,11 @@ packages:
       whatwg-url: 8.7.0
     dev: false
 
+  /date-fns/2.28.0:
+    resolution: {integrity: sha512-8d35hViGYx/QH0icHYCeLmsLmMUheMmTyV9Fcm6gvNwdw31yXXH+O85sOBJ+OLnLQMKZowvpKb6FgMIQjcpvQw==}
+    engines: {node: '>=0.11'}
+    dev: false
+
   /debug/2.6.9:
     resolution: {integrity: sha512-bC7ElrdJaJnPbAP+1EotYvqZsb3ecl5wi6Bfi6BJTUcNowp6cvspg0jXznRTKDjm/E7AdgFBVeAPVMNcKGsHMA==}
     dependencies:
@@ -4963,6 +4990,10 @@ packages:
   /destroy/1.2.0:
     resolution: {integrity: sha512-2sJGJTaXIIaR1w4iJSNoN0hnMY7Gpc/n8D4qSCJw8QqFWXf7cuAgnEHxBpweaVcPevC2l3KpjYCx3NypQQgaJg==}
     engines: {node: '>= 0.8', npm: 1.2.8000 || >= 1.4.16}
+    dev: false
+
+  /detect-element-overflow/1.2.0:
+    resolution: {integrity: sha512-Jtr9ivYPhpd9OJux+hjL0QjUKiS1Ghgy8tvIufUjFslQgIWvgGr4mn57H190APbKkiOmXnmtMI6ytaKzMusecg==}
     dev: false
 
   /detect-newline/3.1.0:
@@ -6219,6 +6250,12 @@ packages:
     dependencies:
       call-bind: 1.0.2
       get-intrinsic: 1.1.1
+    dev: false
+
+  /get-user-locale/1.4.0:
+    resolution: {integrity: sha512-gQo03lP1OArHLKlnoglqrGGl7b04u2EP9Xutmp72cMdtrrSD7ZgIsCsUKZynYWLDkVJW33Cj3pliP7uP0UonHQ==}
+    dependencies:
+      lodash.once: 4.1.1
     dev: false
 
   /get-value/2.0.6:
@@ -8033,6 +8070,10 @@ packages:
     resolution: {integrity: sha512-0KpjqXRVvrYyCsX1swR/XTK0va6VQkQM6MNo7PqW77ByjAhoARA8EfrP1N4+KlKj8YS0ZUCtRT/YUuhyYDujIQ==}
     dev: false
 
+  /lodash.once/4.1.1:
+    resolution: {integrity: sha512-Sb487aTOCr9drQVL8pIxOzVhafOjZN9UU54hiN8PU3uAiSV7lx1yYNpbNmex2PK6dSJoNTSJUUswT651yww3Mg==}
+    dev: false
+
   /lodash.sortby/4.7.0:
     resolution: {integrity: sha1-7dFMgk4sycHgsKG0K7UhBRakJDg=}
     dev: false
@@ -8119,6 +8160,10 @@ packages:
       semver: 6.3.0
     dev: false
 
+  /make-event-props/1.3.0:
+    resolution: {integrity: sha512-oWiDZMcVB1/A487251hEWza1xzgCzl6MXxe9aF24l5Bt9N9UEbqTqKumEfuuLhmlhRZYnc+suVvW4vUs8bwO7Q==}
+    dev: false
+
   /makeerror/1.0.12:
     resolution: {integrity: sha512-JmqCvUhmt43madlpFzG4BQzG2Z3m6tvQDNKdClZnO3VbIudJYmxsT0FNJMeiB2+JTSlTQTSbU8QdesVmwJcmLg==}
     dependencies:
@@ -8173,8 +8218,16 @@ packages:
       readable-stream: 2.3.7
     dev: false
 
+  /merge-class-names/1.4.2:
+    resolution: {integrity: sha512-bOl98VzwCGi25Gcn3xKxnR5p/WrhWFQB59MS/aGENcmUc6iSm96yrFDF0XSNurX9qN4LbJm0R9kfvsQ17i8zCw==}
+    dev: false
+
   /merge-descriptors/1.0.1:
     resolution: {integrity: sha1-sAqqVW3YtEVoFQ7J0blT8/kMu2E=}
+    dev: false
+
+  /merge-refs/1.0.0:
+    resolution: {integrity: sha512-WZ4S5wqD9FCR9hxkLgvcHJCBxzXzy3VVE6p8W2OzxRzB+hLRlcadGE2bW9xp2KSzk10rvp4y+pwwKO6JQVguMg==}
     dev: false
 
   /merge-stream/2.0.0:
@@ -9995,6 +10048,40 @@ packages:
       whatwg-fetch: 3.6.2
     dev: false
 
+  /react-calendar/3.7.0_sfoxds7t5ydpegc3knd667wn6m:
+    resolution: {integrity: sha512-zkK95zWLWLC6w3O7p3SHx/FJXEyyD2UMd4jr3CrKD+G73N+G5vEwrXxYQCNivIPoFNBjqoyYYGlkHA+TBDPLCw==}
+    peerDependencies:
+      react: ^16.3.0 || ^17.0.0 || ^18.0.0
+      react-dom: ^16.3.0 || ^17.0.0 || ^18.0.0
+    dependencies:
+      '@wojtekmaj/date-utils': 1.0.3
+      get-user-locale: 1.4.0
+      merge-class-names: 1.4.2
+      prop-types: 15.8.1
+      react: 17.0.2
+      react-dom: 17.0.2_react@17.0.2
+    dev: false
+
+  /react-date-picker/8.4.0_sfoxds7t5ydpegc3knd667wn6m:
+    resolution: {integrity: sha512-zocntugDUyiHmV2Nq1qnsk4kDQuhBLUsDTz7akfIEJ0jVX925w0K5Ai5oZzWFNQOzXL/ITxafmDMuSbzlpBt/A==}
+    peerDependencies:
+      react: ^16.3.0 || ^17.0.0 || ^18.0.0
+      react-dom: ^16.3.0 || ^17.0.0 || ^18.0.0
+    dependencies:
+      '@types/react-calendar': 3.5.1
+      '@wojtekmaj/date-utils': 1.0.3
+      get-user-locale: 1.4.0
+      make-event-props: 1.3.0
+      merge-class-names: 1.4.2
+      merge-refs: 1.0.0
+      prop-types: 15.8.1
+      react: 17.0.2
+      react-calendar: 3.7.0_sfoxds7t5ydpegc3knd667wn6m
+      react-dom: 17.0.2_react@17.0.2
+      react-fit: 1.4.0_sfoxds7t5ydpegc3knd667wn6m
+      update-input-width: 1.2.2
+    dev: false
+
   /react-dev-utils/11.0.4:
     resolution: {integrity: sha512-dx0LvIGHcOPtKbeiSUM4jqpBl3TcY7CDjZdfOIcKeznE7BWr9dg0iPG90G5yfVQ+p/rGNMXdbfStvzQZEVEi4A==}
     engines: {node: '>=10'}
@@ -10038,6 +10125,29 @@ packages:
 
   /react-error-overlay/6.0.11:
     resolution: {integrity: sha512-/6UZ2qgEyH2aqzYZgQPxEnz33NJ2gNsnHA2o5+o4wW9bLM/JYQitNP9xPhsXwC08hMMovfGe/8retsdDsczPRg==}
+    dev: false
+
+  /react-fit/1.4.0_sfoxds7t5ydpegc3knd667wn6m:
+    resolution: {integrity: sha512-cf9sFKbr1rlTB9fNIKE5Uy4NCMUOqrX2mdJ69V4RtmV4KubPdtnbIP1tEar16GXaToCRr7I7c9d2wkTNk9TV5g==}
+    peerDependencies:
+      react: ^15.5.0 || ^16.0.0 || ^17.0.0 || ^18.0.0
+      react-dom: ^15.5.0 || ^16.0.0 || ^17.0.0 || ^18.0.0
+    dependencies:
+      detect-element-overflow: 1.2.0
+      prop-types: 15.8.1
+      react: 17.0.2
+      react-dom: 17.0.2_react@17.0.2
+      tiny-warning: 1.0.3
+    dev: false
+
+  /react-google-charts/4.0.0_sfoxds7t5ydpegc3knd667wn6m:
+    resolution: {integrity: sha512-9OG0EkBb9JerKEPQYdhmAXnhGLzOdOHOPS9j7l+P1a3z1kcmq9mGDa7PUoX/VQUY4IjZl2/81nsO4o+1cuYsuw==}
+    peerDependencies:
+      react: '>=16.3.0'
+      react-dom: '>=16.3.0'
+    dependencies:
+      react: 17.0.2
+      react-dom: 17.0.2_react@17.0.2
     dev: false
 
   /react-icons/3.11.0_react@17.0.2:
@@ -11565,6 +11675,10 @@ packages:
     resolution: {integrity: sha1-QFQRqOfmM5/mTbmiNN4R3DHgK9Q=}
     dev: false
 
+  /tiny-warning/1.0.3:
+    resolution: {integrity: sha512-lBN9zLN/oAf68o3zNXYrdCt1kP8WsiGW8Oo2ka41b2IM5JL/S1CTyX1rW0mb/zSuJun0ZUrDxx4sqvYS2FWzPA==}
+    dev: false
+
   /tmpl/1.0.5:
     resolution: {integrity: sha512-3f0uOEAQwIqGuWW2MVzYg8fV/QNnc/IpuJNG837rLuczAaLVHslWHZQj4IGiEl5Hs3kkbhwL9Ab7Hrsmuj+Smw==}
     dev: false
@@ -11850,6 +11964,10 @@ packages:
   /upath/1.2.0:
     resolution: {integrity: sha512-aZwGpamFO61g3OlfT7OQCHqhGnW43ieH9WZeP7QxN/G/jS4jfqUkZxoryvJgVPEcrl5NL/ggHsSmLMHuH64Lhg==}
     engines: {node: '>=4'}
+    dev: false
+
+  /update-input-width/1.2.2:
+    resolution: {integrity: sha512-6QwD9ZVSXb96PxOZ01DU0DJTPwQGY7qBYgdniZKJN02Xzom2m+9J6EPxMbefskqtj4x78qbe5psDSALq9iNEYg==}
     dev: false
 
   /uri-js/4.4.1:

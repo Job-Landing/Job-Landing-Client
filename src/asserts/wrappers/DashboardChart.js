@@ -5,7 +5,7 @@ const Wrapper = styled.section`
     grid-template-columns: 1.6fr 1fr;
     column-gap: 30px;
     margin-top: 30px;
-    width: 99%;
+    width: 100%;
 
     svg{
         border-radius: 15px;

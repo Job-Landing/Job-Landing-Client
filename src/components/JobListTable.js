@@ -15,7 +15,7 @@ import SearchForm from './SearchForm'
 const JobListTable = () => {
     const { user } = React.useContext(JobLandingContext);
     const [isEmpty, setIsEmpty] = useState(true);
-    const [currPage, setCurrPage] = useState(1);
+    const [page, setPage] = useState(1);
     const [totalPage, setTotalPage] = useState(1);
     const [firstSlice, setFirstSlice] = useState(0);
     const [lastSlice, setLastSlice] = useState(10);
@@ -30,15 +30,15 @@ const JobListTable = () => {
         }, 2000);
     }
 
-    const handlePageChange = (e) => {
-        var curPage = parseInt(e.target.innerText, 10)
-        setCurrPage(curPage);
-        if (curPage === 1) {
+    const handlePageChange = (e, value) => {
+        // var curPage = parseInt(e.target.innerText, 10)
+        setPage(value);
+        if (value === 1) {
             setFirstSlice(0);
             setLastSlice(10);
         } else {
-            setFirstSlice((curPage - 1) * 10);
-            setLastSlice((curPage)*10);
+            setFirstSlice((value - 1) * 10);
+            setLastSlice((value)*10);
         }
     };
 
@@ -117,7 +117,7 @@ const JobListTable = () => {
                         </tbody>
                     </table>
                 </div>
-                {isEmpty ? <p className="empty">Ohh~ Empty</p> : <Pagination className="pagination" count={totalPage} color="primary" page={currPage} onChange={handlePageChange} />}
+                {isEmpty ? <p className="empty">Ohh~ Empty</p> : <Pagination className="pagination" count={totalPage} color="primary" page={page} onChange={handlePageChange} />}
 
             </div>
 

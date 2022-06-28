@@ -64,7 +64,7 @@ const ProfileUpdate = () => {
                     <form onSubmit={handleSubmit}>
                         <div className='form_row'>
                             <label>Username</label> <br />
-                            <input type="text" name="username" value={values.username} onChange={handleChange} required />
+                            <input type="text" name="username" value={values.username} onChange={handleChange} disabled />
                         </div>
                         <div className='form_row'>
                             <label>Email</label> <br />

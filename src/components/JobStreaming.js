@@ -53,7 +53,7 @@ const JobStreaming = () => {
                                     <td>{item.company}</td>
                                     <td>{item.type}</td>
                                     <td>{item.createAt.substring(0,10)}</td>
-                                    <td><a className='no_underline' target="_blank" href={item.applyUrl} rel="noreferrer"><Button variant="text">Link</Button></a></td>
+                                    <td className='home_streaming'><a className='no_underline' target="_blank" href={item.applyUrl} rel="noreferrer"><Button variant="text">Link</Button></a></td>
                                 </tr>
                             })
                         }

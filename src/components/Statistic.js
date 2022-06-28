@@ -11,7 +11,7 @@ const Statistic = ({jobStatus}) => {
                 <div className="box box1">
                     <div>
                         <h5>Pending Application</h5>
-                        <h2>{jobStatus['pending']}</h2>
+                        <h2>{jobStatus['pending']+1}</h2>
                     </div>
                     <img src={pending} alt="pending" />
                 </div>

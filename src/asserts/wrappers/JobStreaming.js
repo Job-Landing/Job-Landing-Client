@@ -2,12 +2,13 @@ import styled from "styled-components";
 
 const Wrapper = styled.section`
     padding-top: 20px;
-
+    padding-bottom: 20px;
     /* Table */
     .inner_table{
         background-color: rgba(50, 50, 64, 0.79);
         border-radius: 15px;
         padding: 0 15px 15px 15px;
+
     }
     h2{
         margin: 0;
@@ -110,6 +111,9 @@ const Wrapper = styled.section`
     }
     .no_underline{
         text-decoration: none;
+    }
+    .home_streaming{
+        padding-left: 20px;
     }
 
 `

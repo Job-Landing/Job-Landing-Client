@@ -165,7 +165,7 @@ const JobUpdate = () => {
                         <Button variant="contained" className='clear' onClick={recoverJob}>Recover</Button>
                     </div>
                 </form>
-                 <Alert className={updateStatus ==='success' ? 'alert animate__animated animate__fadeInRight' : updateStatus ==='none' ? 'none': 'alert animate__animated  animate__fadeOutRight'} severity="success"><strong>Ypdate success!</strong></Alert>
+                 <Alert className={updateStatus ==='success' ? 'alert animate__animated animate__fadeInRight' : updateStatus ==='none' ? 'none': 'alert animate__animated  animate__fadeOutRight'} severity="success"><strong>Update success!</strong></Alert>
             </div>
         </Wrapper>
     );

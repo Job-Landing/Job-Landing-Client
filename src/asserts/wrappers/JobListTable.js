@@ -2,6 +2,7 @@ import styled from "styled-components";
 
 const Wrapper = styled.section`
     padding-top: 20px;
+    padding-bottom: 20px;
     /* Table */
     .inner_table{
         background-color: rgba(50, 50, 64, 0.79);

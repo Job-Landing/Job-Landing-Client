@@ -13,9 +13,7 @@ Teams:
 
 [![Watch the demo](https://github.com/Job-Landing/Job-Landing-Client/blob/main/public/images/watch-video.png?raw=true)](https://www.youtube.com/watch?v=VbVPYcYXwnA&ab_channel=maplezhu)
 
-
-
-## App Introduction
+### App Introduction
 
 Getting a job is no easy task, especially with tight competition and increased challenges during the application and
 recruitment process.
@@ -30,14 +28,15 @@ making it hard to remember where we've applied and where we stand with each oppo
 This is a tool to help user track and organize job search that offers one place to keep all of those jobs and all the
 information related to them.
 
-## Langing Page
+## Pages
+### Langing Page
 
 This page is a brief introduction of our app, displaying user comments and a action page for register
 <div align="center">
     <img src="./public/images/page-landing.png" alt="home-page" width=60%>
 </div>
 
-## Dashboard
+### Dashboard
 
 This page shows a glance of overall applications the user currently have. 
 
@@ -45,7 +44,7 @@ This page shows a glance of overall applications the user currently have.
     <img src="./public/images/page-dashboard.png" alt="demo-page" width=60%>
 </div>
 
-## All Job Tracking Page
+### All Job Tracking Page
 
 This page will allow login user to search their saved job by filter
 
@@ -53,7 +52,7 @@ This page will allow login user to search their saved job by filter
     <img src="./public/images/page-all-jobs.png" alt="all-job-page" width=60%>
 </div>
 
-## Job Add Page
+### Job Add Page
 
 This page will allow login user add position they just applied and keep tracking in the future.
 
@@ -61,10 +60,16 @@ This page will allow login user add position they just applied and keep tracking
     <img src="./public/images/page-add-job.png" alt="add-job-page" width=60%>
 </div>
 
-## Profile Page
+### Profile Page
 
 This is user profile information.
 
 <div align="center">
     <img src="./public/images/page-profile.png" alt="profile-page" width=60%>
+</div>
+
+## Accessibility Report
+
+<div align="center">
+    <img width=90% alt="accessibility-report" src="https://user-images.githubusercontent.com/38137877/176760084-77f03a93-9d74-41bd-bf41-6e56d28d601c.png">
 </div>

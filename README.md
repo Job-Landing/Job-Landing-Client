@@ -2,10 +2,18 @@
 
 *Help job seekers land their dream job*
 
+[Visit the Website](https://job-landing-client-iteration3.herokuapp.com/)
+
 Teams: 
 - Zanyuan Yang
 - Siheng Wei
 - Maple Feng Zhu
+
+## Demo
+
+[![Watch the demo](https://github.com/Job-Landing/Job-Landing-Client/blob/main/public/images/watch-video.png?raw=true)](https://www.youtube.com/watch?v=VbVPYcYXwnA&ab_channel=maplezhu)
+
+
 
 ## App Introduction
 
@@ -29,13 +37,12 @@ This page is a brief introduction of our app, displaying user comments and a act
     <img src="./public/images/page-landing.png" alt="home-page" width=60%>
 </div>
 
-## Demo Page
+## Dashboard
 
-This page allows anonymous users to try on the app without login. However, all the data won't be saved unless the user
-login.
+This page shows a glance of overall applications the user currently have. 
 
 <div align="center">
-    <img src="./public/images/page-demo.png" alt="demo-page" width=60%>
+    <img src="./public/images/page-dashboard.png" alt="demo-page" width=60%>
 </div>
 
 ## All Job Tracking Page
